@@ -1,0 +1,4332 @@
+Index: Android Studio/MyCovidApplication/app/src/main/java/com/shilpa/mycovidapplication/SplashActivity.java
+===================================================================
+--- Android Studio/MyCovidApplication/app/src/main/java/com/shilpa/mycovidapplication/SplashActivity.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ Android Studio/MyCovidApplication/app/src/main/java/com/shilpa/mycovidapplication/SplashActivity.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
+@@ -1,35 +0,0 @@
+-package com.shilpa.mycovidapplication;
+-
+-import androidx.appcompat.app.AppCompatActivity;
+-
+-import android.content.Intent;
+-import android.os.Bundle;
+-import android.os.Handler;
+-import android.view.WindowManager;
+-import android.widget.ImageView;
+-import android.widget.TextView;
+-
+-public class SplashActivity extends AppCompatActivity {
+-
+-    ImageView image;
+-    TextView text;
+-    @Override
+-    protected void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+-        setContentView(R.layout.activity_splash);
+-
+-        image = findViewById(R.id.coronaIcon);
+-        text = findViewById(R.id.corona_update);
+-
+-        int SPLASH_SCREEN = 5000;
+-        new Handler().postDelayed(new Runnable() {
+-            @Override
+-            public void run() {
+-                Intent intent= new Intent(SplashActivity.this, MainActivity.class);
+-                startActivity(intent);
+-                finish();
+-            }
+-        }, SPLASH_SCREEN);
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/bottom_menu/HomeFragment.java
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/bottom_menu/HomeFragment.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/java/com/shilpa/artist_work/bottom_menu/HomeFragment.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
+@@ -1,62 +0,0 @@
+-package com.shilpa.artist_work.bottom_menu;
+-
+-import android.os.Bundle;
+-
+-import androidx.fragment.app.Fragment;
+-
+-import android.view.LayoutInflater;
+-import android.view.View;
+-import android.view.ViewGroup;
+-
+-import com.shilpa.artist_work.R;
+-
+-
+-public class HomeFragment extends Fragment {
+-
+-    // TODO: Rename parameter arguments, choose names that match
+-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+-    private static final String ARG_PARAM1 = "param1";
+-    private static final String ARG_PARAM2 = "param2";
+-
+-    // TODO: Rename and change types of parameters
+-    private String mParam1;
+-    private String mParam2;
+-
+-    public HomeFragment() {
+-        // Required empty public constructor
+-    }
+-
+-    /**
+-     * Use this factory method to create a new instance of
+-     * this fragment using the provided parameters.
+-     *
+-     * @param param1 Parameter 1.
+-     * @param param2 Parameter 2.
+-     * @return A new instance of fragment HomeFragment.
+-     */
+-    // TODO: Rename and change types and number of parameters
+-    public static HomeFragment newInstance(String param1, String param2) {
+-        HomeFragment fragment = new HomeFragment();
+-        Bundle args = new Bundle();
+-        args.putString(ARG_PARAM1, param1);
+-        args.putString(ARG_PARAM2, param2);
+-        fragment.setArguments(args);
+-        return fragment;
+-    }
+-
+-    @Override
+-    public void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        if (getArguments() != null) {
+-            mParam1 = getArguments().getString(ARG_PARAM1);
+-            mParam2 = getArguments().getString(ARG_PARAM2);
+-        }
+-    }
+-
+-    @Override
+-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+-                             Bundle savedInstanceState) {
+-        // Inflate the layout for this fragment
+-        return inflater.inflate(R.layout.fragment_home, container, false);
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/bottom_menu/NotificatonFragment.java
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/bottom_menu/NotificatonFragment.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/java/com/shilpa/artist_work/bottom_menu/NotificatonFragment.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
+@@ -1,66 +0,0 @@
+-package com.shilpa.artist_work.bottom_menu;
+-
+-import android.os.Bundle;
+-
+-import androidx.fragment.app.Fragment;
+-
+-import android.view.LayoutInflater;
+-import android.view.View;
+-import android.view.ViewGroup;
+-
+-import com.shilpa.artist_work.R;
+-
+-/**
+- * A simple {@link Fragment} subclass.
+- * Use the {@link NotificatonFragment#newInstance} factory method to
+- * create an instance of this fragment.
+- */
+-public class NotificatonFragment extends Fragment {
+-
+-    // TODO: Rename parameter arguments, choose names that match
+-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+-    private static final String ARG_PARAM1 = "param1";
+-    private static final String ARG_PARAM2 = "param2";
+-
+-    // TODO: Rename and change types of parameters
+-    private String mParam1;
+-    private String mParam2;
+-
+-    public NotificatonFragment() {
+-        // Required empty public constructor
+-    }
+-
+-    /**
+-     * Use this factory method to create a new instance of
+-     * this fragment using the provided parameters.
+-     *
+-     * @param param1 Parameter 1.
+-     * @param param2 Parameter 2.
+-     * @return A new instance of fragment NotificatonFragment.
+-     */
+-    // TODO: Rename and change types and number of parameters
+-    public static NotificatonFragment newInstance(String param1, String param2) {
+-        NotificatonFragment fragment = new NotificatonFragment();
+-        Bundle args = new Bundle();
+-        args.putString(ARG_PARAM1, param1);
+-        args.putString(ARG_PARAM2, param2);
+-        fragment.setArguments(args);
+-        return fragment;
+-    }
+-
+-    @Override
+-    public void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        if (getArguments() != null) {
+-            mParam1 = getArguments().getString(ARG_PARAM1);
+-            mParam2 = getArguments().getString(ARG_PARAM2);
+-        }
+-    }
+-
+-    @Override
+-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+-                             Bundle savedInstanceState) {
+-        // Inflate the layout for this fragment
+-        return inflater.inflate(R.layout.fragment_notificaton, container, false);
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/bottom_menu/ProfileFragment.java
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/bottom_menu/ProfileFragment.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/java/com/shilpa/artist_work/bottom_menu/ProfileFragment.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
+@@ -1,57 +0,0 @@
+-package com.shilpa.artist_work.bottom_menu;
+-
+-import android.os.Bundle;
+-
+-import androidx.fragment.app.Fragment;
+-
+-import android.view.LayoutInflater;
+-import android.view.View;
+-import android.view.ViewGroup;
+-
+-import com.shilpa.artist_work.R;
+-
+-
+-public class ProfileFragment extends Fragment {
+-
+-    // TODO: Rename parameter arguments, choose names that match
+-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+-    private static final String ARG_PARAM1 = "param1";
+-    private static final String ARG_PARAM2 = "param2";
+-
+-    // TODO: Rename and change types of parameters
+-    private String mParam1;
+-    private String mParam2;
+-
+-
+-    public ProfileFragment() {
+-        // Required empty public constructor
+-    }
+-
+-
+-    // TODO: Rename and change types and number of parameters
+-    public static ProfileFragment newInstance(String param1, String param2) {
+-        ProfileFragment fragment = new ProfileFragment();
+-        Bundle args = new Bundle();
+-        args.putString(ARG_PARAM1, param1);
+-        args.putString(ARG_PARAM2, param2);
+-        fragment.setArguments(args);
+-        return fragment;
+-    }
+-
+-    @Override
+-    public void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        if (getArguments() != null) {
+-            mParam1 = getArguments().getString(ARG_PARAM1);
+-            mParam2 = getArguments().getString(ARG_PARAM2);
+-        }
+-    }
+-
+-    @Override
+-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+-                             Bundle savedInstanceState) {
+-        // Inflate the layout for this fragment
+-        return inflater.inflate(R.layout.fragment_profile, container, false);
+-
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/bottom_menu/SaveFragment.java
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/bottom_menu/SaveFragment.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/java/com/shilpa/artist_work/bottom_menu/SaveFragment.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
+@@ -1,66 +0,0 @@
+-package com.shilpa.artist_work.bottom_menu;
+-
+-import android.os.Bundle;
+-
+-import androidx.fragment.app.Fragment;
+-
+-import android.view.LayoutInflater;
+-import android.view.View;
+-import android.view.ViewGroup;
+-
+-import com.shilpa.artist_work.R;
+-
+-/**
+- * A simple {@link Fragment} subclass.
+- * Use the {@link SaveFragment#newInstance} factory method to
+- * create an instance of this fragment.
+- */
+-public class SaveFragment extends Fragment {
+-
+-    // TODO: Rename parameter arguments, choose names that match
+-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+-    private static final String ARG_PARAM1 = "param1";
+-    private static final String ARG_PARAM2 = "param2";
+-
+-    // TODO: Rename and change types of parameters
+-    private String mParam1;
+-    private String mParam2;
+-
+-    public SaveFragment() {
+-        // Required empty public constructor
+-    }
+-
+-    /**
+-     * Use this factory method to create a new instance of
+-     * this fragment using the provided parameters.
+-     *
+-     * @param param1 Parameter 1.
+-     * @param param2 Parameter 2.
+-     * @return A new instance of fragment SaveFragment.
+-     */
+-    // TODO: Rename and change types and number of parameters
+-    public static SaveFragment newInstance(String param1, String param2) {
+-        SaveFragment fragment = new SaveFragment();
+-        Bundle args = new Bundle();
+-        args.putString(ARG_PARAM1, param1);
+-        args.putString(ARG_PARAM2, param2);
+-        fragment.setArguments(args);
+-        return fragment;
+-    }
+-
+-    @Override
+-    public void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        if (getArguments() != null) {
+-            mParam1 = getArguments().getString(ARG_PARAM1);
+-            mParam2 = getArguments().getString(ARG_PARAM2);
+-        }
+-    }
+-
+-    @Override
+-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+-                             Bundle savedInstanceState) {
+-        // Inflate the layout for this fragment
+-        return inflater.inflate(R.layout.fragment_save, container, false);
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/bottom_menu/UploadFragment.java
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/bottom_menu/UploadFragment.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/java/com/shilpa/artist_work/bottom_menu/UploadFragment.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
+@@ -1,73 +0,0 @@
+-package com.shilpa.artist_work.bottom_menu;
+-
+-import android.content.Intent;
+-import android.os.Bundle;
+-
+-import androidx.fragment.app.Fragment;
+-
+-import android.view.LayoutInflater;
+-import android.view.View;
+-import android.view.ViewGroup;
+-
+-import com.shilpa.artist_work.R;
+-
+-/**
+- * A simple {@link Fragment} subclass.
+- * Use the {@link UploadFragment#newInstance} factory method to
+- * create an instance of this fragment.
+- */
+-public class UploadFragment extends Fragment {
+-
+-    // TODO: Rename parameter arguments, choose names that match
+-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+-    private static final String ARG_PARAM1 = "param1";
+-    private static final String ARG_PARAM2 = "param2";
+-
+-    // TODO: Rename and change types of parameters
+-    private String mParam1;
+-    private String mParam2;
+-
+-    public UploadFragment() {
+-        // Required empty public constructor
+-    }
+-
+-    /**
+-     * Use this factory method to create a new instance of
+-     * this fragment using the provided parameters.
+-     *
+-     * @param param1 Parameter 1.
+-     * @param param2 Parameter 2.
+-     * @return A new instance of fragment UploadFragment.
+-     */
+-    // TODO: Rename and change types and number of parameters
+-    public static UploadFragment newInstance(String param1, String param2) {
+-        UploadFragment fragment = new UploadFragment();
+-        Bundle args = new Bundle();
+-        args.putString(ARG_PARAM1, param1);
+-        args.putString(ARG_PARAM2, param2);
+-        fragment.setArguments(args);
+-        return fragment;
+-    }
+-
+-    @Override
+-    public void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        if (getArguments() != null) {
+-            mParam1 = getArguments().getString(ARG_PARAM1);
+-            mParam2 = getArguments().getString(ARG_PARAM2);
+-        }
+-    }
+-
+-    @Override
+-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+-                             Bundle savedInstanceState) {
+-        // Inflate the layout for this fragment
+-        return inflater.inflate(R.layout.fragment_upload, container, false);
+-    }
+-
+-    public void Upload_profile(View view) {
+-
+-        Intent intent = new Intent(UploadFragment.this.getActivity(), UploadProfile.class);
+-        startActivity(intent);
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/AboutFragment.java
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/AboutFragment.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/java/com/shilpa/artist_work/AboutFragment.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
+@@ -1,64 +0,0 @@
+-package com.shilpa.artist_work;
+-
+-import android.os.Bundle;
+-
+-import androidx.fragment.app.Fragment;
+-
+-import android.view.LayoutInflater;
+-import android.view.View;
+-import android.view.ViewGroup;
+-
+-/**
+- * A simple {@link Fragment} subclass.
+- * Use the {@link AboutFragment#newInstance} factory method to
+- * create an instance of this fragment.
+- */
+-public class AboutFragment extends Fragment {
+-
+-    // TODO: Rename parameter arguments, choose names that match
+-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+-    private static final String ARG_PARAM1 = "param1";
+-    private static final String ARG_PARAM2 = "param2";
+-
+-    // TODO: Rename and change types of parameters
+-    private String mParam1;
+-    private String mParam2;
+-
+-    public AboutFragment() {
+-        // Required empty public constructor
+-    }
+-
+-    /**
+-     * Use this factory method to create a new instance of
+-     * this fragment using the provided parameters.
+-     *
+-     * @param param1 Parameter 1.
+-     * @param param2 Parameter 2.
+-     * @return A new instance of fragment AboutFragment.
+-     */
+-    // TODO: Rename and change types and number of parameters
+-    public static AboutFragment newInstance(String param1, String param2) {
+-        AboutFragment fragment = new AboutFragment();
+-        Bundle args = new Bundle();
+-        args.putString(ARG_PARAM1, param1);
+-        args.putString(ARG_PARAM2, param2);
+-        fragment.setArguments(args);
+-        return fragment;
+-    }
+-
+-    @Override
+-    public void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        if (getArguments() != null) {
+-            mParam1 = getArguments().getString(ARG_PARAM1);
+-            mParam2 = getArguments().getString(ARG_PARAM2);
+-        }
+-    }
+-
+-    @Override
+-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+-                             Bundle savedInstanceState) {
+-        // Inflate the layout for this fragment
+-        return inflater.inflate(R.layout.fragment_about, container, false);
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/BlogFragment.java
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/BlogFragment.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/java/com/shilpa/artist_work/BlogFragment.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
+@@ -1,64 +0,0 @@
+-package com.shilpa.artist_work;
+-
+-import android.os.Bundle;
+-
+-import androidx.fragment.app.Fragment;
+-
+-import android.view.LayoutInflater;
+-import android.view.View;
+-import android.view.ViewGroup;
+-
+-/**
+- * A simple {@link Fragment} subclass.
+- * Use the {@link BlogFragment#newInstance} factory method to
+- * create an instance of this fragment.
+- */
+-public class BlogFragment extends Fragment {
+-
+-    // TODO: Rename parameter arguments, choose names that match
+-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+-    private static final String ARG_PARAM1 = "param1";
+-    private static final String ARG_PARAM2 = "param2";
+-
+-    // TODO: Rename and change types of parameters
+-    private String mParam1;
+-    private String mParam2;
+-
+-    public BlogFragment() {
+-        // Required empty public constructor
+-    }
+-
+-    /**
+-     * Use this factory method to create a new instance of
+-     * this fragment using the provided parameters.
+-     *
+-     * @param param1 Parameter 1.
+-     * @param param2 Parameter 2.
+-     * @return A new instance of fragment BlogFragment.
+-     */
+-    // TODO: Rename and change types and number of parameters
+-    public static BlogFragment newInstance(String param1, String param2) {
+-        BlogFragment fragment = new BlogFragment();
+-        Bundle args = new Bundle();
+-        args.putString(ARG_PARAM1, param1);
+-        args.putString(ARG_PARAM2, param2);
+-        fragment.setArguments(args);
+-        return fragment;
+-    }
+-
+-    @Override
+-    public void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        if (getArguments() != null) {
+-            mParam1 = getArguments().getString(ARG_PARAM1);
+-            mParam2 = getArguments().getString(ARG_PARAM2);
+-        }
+-    }
+-
+-    @Override
+-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+-                             Bundle savedInstanceState) {
+-        // Inflate the layout for this fragment
+-        return inflater.inflate(R.layout.fragment_blog, container, false);
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/FeedbackFragment.java
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/FeedbackFragment.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/java/com/shilpa/artist_work/FeedbackFragment.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
+@@ -1,64 +0,0 @@
+-package com.shilpa.artist_work;
+-
+-import android.os.Bundle;
+-
+-import androidx.fragment.app.Fragment;
+-
+-import android.view.LayoutInflater;
+-import android.view.View;
+-import android.view.ViewGroup;
+-
+-/**
+- * A simple {@link Fragment} subclass.
+- * Use the {@link FeedbackFragment#newInstance} factory method to
+- * create an instance of this fragment.
+- */
+-public class FeedbackFragment extends Fragment {
+-
+-    // TODO: Rename parameter arguments, choose names that match
+-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+-    private static final String ARG_PARAM1 = "param1";
+-    private static final String ARG_PARAM2 = "param2";
+-
+-    // TODO: Rename and change types of parameters
+-    private String mParam1;
+-    private String mParam2;
+-
+-    public FeedbackFragment() {
+-        // Required empty public constructor
+-    }
+-
+-    /**
+-     * Use this factory method to create a new instance of
+-     * this fragment using the provided parameters.
+-     *
+-     * @param param1 Parameter 1.
+-     * @param param2 Parameter 2.
+-     * @return A new instance of fragment FeedbackFragment.
+-     */
+-    // TODO: Rename and change types and number of parameters
+-    public static FeedbackFragment newInstance(String param1, String param2) {
+-        FeedbackFragment fragment = new FeedbackFragment();
+-        Bundle args = new Bundle();
+-        args.putString(ARG_PARAM1, param1);
+-        args.putString(ARG_PARAM2, param2);
+-        fragment.setArguments(args);
+-        return fragment;
+-    }
+-
+-    @Override
+-    public void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        if (getArguments() != null) {
+-            mParam1 = getArguments().getString(ARG_PARAM1);
+-            mParam2 = getArguments().getString(ARG_PARAM2);
+-        }
+-    }
+-
+-    @Override
+-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+-                             Bundle savedInstanceState) {
+-        // Inflate the layout for this fragment
+-        return inflater.inflate(R.layout.fragment_feedback, container, false);
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/HelpFragment.java
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/HelpFragment.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/java/com/shilpa/artist_work/HelpFragment.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
+@@ -1,64 +0,0 @@
+-package com.shilpa.artist_work;
+-
+-import android.os.Bundle;
+-
+-import androidx.fragment.app.Fragment;
+-
+-import android.view.LayoutInflater;
+-import android.view.View;
+-import android.view.ViewGroup;
+-
+-/**
+- * A simple {@link Fragment} subclass.
+- * Use the {@link HelpFragment#newInstance} factory method to
+- * create an instance of this fragment.
+- */
+-public class HelpFragment extends Fragment {
+-
+-    // TODO: Rename parameter arguments, choose names that match
+-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+-    private static final String ARG_PARAM1 = "param1";
+-    private static final String ARG_PARAM2 = "param2";
+-
+-    // TODO: Rename and change types of parameters
+-    private String mParam1;
+-    private String mParam2;
+-
+-    public HelpFragment() {
+-        // Required empty public constructor
+-    }
+-
+-    /**
+-     * Use this factory method to create a new instance of
+-     * this fragment using the provided parameters.
+-     *
+-     * @param param1 Parameter 1.
+-     * @param param2 Parameter 2.
+-     * @return A new instance of fragment HelpFragment.
+-     */
+-    // TODO: Rename and change types and number of parameters
+-    public static HelpFragment newInstance(String param1, String param2) {
+-        HelpFragment fragment = new HelpFragment();
+-        Bundle args = new Bundle();
+-        args.putString(ARG_PARAM1, param1);
+-        args.putString(ARG_PARAM2, param2);
+-        fragment.setArguments(args);
+-        return fragment;
+-    }
+-
+-    @Override
+-    public void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        if (getArguments() != null) {
+-            mParam1 = getArguments().getString(ARG_PARAM1);
+-            mParam2 = getArguments().getString(ARG_PARAM2);
+-        }
+-    }
+-
+-    @Override
+-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+-                             Bundle savedInstanceState) {
+-        // Inflate the layout for this fragment
+-        return inflater.inflate(R.layout.fragment_help, container, false);
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/PrivacyFragment.java
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/PrivacyFragment.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/java/com/shilpa/artist_work/PrivacyFragment.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
+@@ -1,64 +0,0 @@
+-package com.shilpa.artist_work;
+-
+-import android.os.Bundle;
+-
+-import androidx.fragment.app.Fragment;
+-
+-import android.view.LayoutInflater;
+-import android.view.View;
+-import android.view.ViewGroup;
+-
+-/**
+- * A simple {@link Fragment} subclass.
+- * Use the {@link PrivacyFragment#newInstance} factory method to
+- * create an instance of this fragment.
+- */
+-public class PrivacyFragment extends Fragment {
+-
+-    // TODO: Rename parameter arguments, choose names that match
+-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+-    private static final String ARG_PARAM1 = "param1";
+-    private static final String ARG_PARAM2 = "param2";
+-
+-    // TODO: Rename and change types of parameters
+-    private String mParam1;
+-    private String mParam2;
+-
+-    public PrivacyFragment() {
+-        // Required empty public constructor
+-    }
+-
+-    /**
+-     * Use this factory method to create a new instance of
+-     * this fragment using the provided parameters.
+-     *
+-     * @param param1 Parameter 1.
+-     * @param param2 Parameter 2.
+-     * @return A new instance of fragment PrivacyFragment.
+-     */
+-    // TODO: Rename and change types and number of parameters
+-    public static PrivacyFragment newInstance(String param1, String param2) {
+-        PrivacyFragment fragment = new PrivacyFragment();
+-        Bundle args = new Bundle();
+-        args.putString(ARG_PARAM1, param1);
+-        args.putString(ARG_PARAM2, param2);
+-        fragment.setArguments(args);
+-        return fragment;
+-    }
+-
+-    @Override
+-    public void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        if (getArguments() != null) {
+-            mParam1 = getArguments().getString(ARG_PARAM1);
+-            mParam2 = getArguments().getString(ARG_PARAM2);
+-        }
+-    }
+-
+-    @Override
+-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+-                             Bundle savedInstanceState) {
+-        // Inflate the layout for this fragment
+-        return inflater.inflate(R.layout.fragment_privacy, container, false);
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/SettingFragment.java
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/SettingFragment.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/java/com/shilpa/artist_work/SettingFragment.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
+@@ -1,64 +0,0 @@
+-package com.shilpa.artist_work;
+-
+-import android.os.Bundle;
+-
+-import androidx.fragment.app.Fragment;
+-
+-import android.view.LayoutInflater;
+-import android.view.View;
+-import android.view.ViewGroup;
+-
+-/**
+- * A simple {@link Fragment} subclass.
+- * Use the {@link SettingFragment#newInstance} factory method to
+- * create an instance of this fragment.
+- */
+-public class SettingFragment extends Fragment {
+-
+-    // TODO: Rename parameter arguments, choose names that match
+-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+-    private static final String ARG_PARAM1 = "param1";
+-    private static final String ARG_PARAM2 = "param2";
+-
+-    // TODO: Rename and change types of parameters
+-    private String mParam1;
+-    private String mParam2;
+-
+-    public SettingFragment() {
+-        // Required empty public constructor
+-    }
+-
+-    /**
+-     * Use this factory method to create a new instance of
+-     * this fragment using the provided parameters.
+-     *
+-     * @param param1 Parameter 1.
+-     * @param param2 Parameter 2.
+-     * @return A new instance of fragment SettingFragment.
+-     */
+-    // TODO: Rename and change types and number of parameters
+-    public static SettingFragment newInstance(String param1, String param2) {
+-        SettingFragment fragment = new SettingFragment();
+-        Bundle args = new Bundle();
+-        args.putString(ARG_PARAM1, param1);
+-        args.putString(ARG_PARAM2, param2);
+-        fragment.setArguments(args);
+-        return fragment;
+-    }
+-
+-    @Override
+-    public void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        if (getArguments() != null) {
+-            mParam1 = getArguments().getString(ARG_PARAM1);
+-            mParam2 = getArguments().getString(ARG_PARAM2);
+-        }
+-    }
+-
+-    @Override
+-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+-                             Bundle savedInstanceState) {
+-        // Inflate the layout for this fragment
+-        return inflater.inflate(R.layout.fragment_setting, container, false);
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/TermFragment.java
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/TermFragment.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/java/com/shilpa/artist_work/TermFragment.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
+@@ -1,64 +0,0 @@
+-package com.shilpa.artist_work;
+-
+-import android.os.Bundle;
+-
+-import androidx.fragment.app.Fragment;
+-
+-import android.view.LayoutInflater;
+-import android.view.View;
+-import android.view.ViewGroup;
+-
+-/**
+- * A simple {@link Fragment} subclass.
+- * Use the {@link TermFragment#newInstance} factory method to
+- * create an instance of this fragment.
+- */
+-public class TermFragment extends Fragment {
+-
+-    // TODO: Rename parameter arguments, choose names that match
+-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+-    private static final String ARG_PARAM1 = "param1";
+-    private static final String ARG_PARAM2 = "param2";
+-
+-    // TODO: Rename and change types of parameters
+-    private String mParam1;
+-    private String mParam2;
+-
+-    public TermFragment() {
+-        // Required empty public constructor
+-    }
+-
+-    /**
+-     * Use this factory method to create a new instance of
+-     * this fragment using the provided parameters.
+-     *
+-     * @param param1 Parameter 1.
+-     * @param param2 Parameter 2.
+-     * @return A new instance of fragment TermFragment.
+-     */
+-    // TODO: Rename and change types and number of parameters
+-    public static TermFragment newInstance(String param1, String param2) {
+-        TermFragment fragment = new TermFragment();
+-        Bundle args = new Bundle();
+-        args.putString(ARG_PARAM1, param1);
+-        args.putString(ARG_PARAM2, param2);
+-        fragment.setArguments(args);
+-        return fragment;
+-    }
+-
+-    @Override
+-    public void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        if (getArguments() != null) {
+-            mParam1 = getArguments().getString(ARG_PARAM1);
+-            mParam2 = getArguments().getString(ARG_PARAM2);
+-        }
+-    }
+-
+-    @Override
+-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+-                             Bundle savedInstanceState) {
+-        // Inflate the layout for this fragment
+-        return inflater.inflate(R.layout.fragment_term, container, false);
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_about.xml
+===================================================================
+--- app/src/main/res/layout/fragment_about.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/res/layout/fragment_about.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
+@@ -1,18 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".AboutFragment"
+-    android:background="@color/black">
+-
+-    <!-- TODO: Update blank fragment layout -->
+-    <TextView
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        android:text="Hello! you can read about this app there "
+-        android:textColor="@color/white"
+-        android:textSize="25dp"
+-        android:gravity="center"/>
+-
+-</FrameLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_blog.xml
+===================================================================
+--- app/src/main/res/layout/fragment_blog.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/res/layout/fragment_blog.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
+@@ -1,18 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".BlogFragment"
+-    android:background="@color/black">
+-
+-    <!-- TODO: Update blank fragment layout -->
+-    <TextView
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        android:text="Hello! you can post your blog there "
+-        android:textColor="@color/white"
+-        android:textSize="25dp"
+-        android:gravity="center"/>
+-
+-</FrameLayout>
+Index: app/src/main/res/layout/fragment_feedback.xml
+===================================================================
+--- app/src/main/res/layout/fragment_feedback.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/res/layout/fragment_feedback.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
+@@ -1,18 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".FeedbackFragment"
+-    android:background="@color/black">
+-
+-    <!-- TODO: Update blank fragment layout -->
+-    <TextView
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        android:text="Hello! Please give us feedback there "
+-        android:textColor="@color/white"
+-        android:textSize="25dp"
+-        android:gravity="center"/>
+-
+-</FrameLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_help.xml
+===================================================================
+--- app/src/main/res/layout/fragment_help.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/res/layout/fragment_help.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
+@@ -1,18 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".HelpFragment"
+-    android:background="@color/black">
+-
+-    <!-- TODO: Update blank fragment layout -->
+-    <TextView
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        android:text="Hello! If you found any difficulty you can come here"
+-        android:textColor="@color/white"
+-        android:textSize="25dp"
+-        android:gravity="center"/>
+-
+-</FrameLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_home.xml
+===================================================================
+--- app/src/main/res/layout/fragment_home.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/res/layout/fragment_home.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
+@@ -1,91 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<androidx.drawerlayout.widget.DrawerLayout
+-    xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".HomeActivity"
+-    android:background="@color/white"
+-    android:id="@+id/drawer"
+-    tools:openDrawer="start"
+-    android:fitsSystemWindows="true">
+-
+-    <com.google.android.material.navigation.NavigationView
+-        android:id="@+id/nav_menu"
+-        android:layout_width="300dp"
+-        android:layout_height="match_parent"
+-        app:menu="@menu/menu"
+-        app:headerLayout="@layout/header"
+-        android:layout_gravity="start">
+-
+-    </com.google.android.material.navigation.NavigationView>
+-
+-    <RelativeLayout
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent">
+-        <androidx.recyclerview.widget.RecyclerView
+-            android:id="@+id/rcv"
+-            android:layout_width="match_parent"
+-            android:layout_height="match_parent"
+-            android:layout_marginTop="65dp"
+-            />
+-
+-        <androidx.appcompat.widget.Toolbar
+-            android:id="@+id/toolbar2"
+-            android:layout_width="match_parent"
+-            android:layout_height="wrap_content"
+-            android:background="@color/black"
+-            android:minHeight="?attr/actionBarSize"
+-            android:theme="?attr/background" />
+-
+-        <ImageView
+-            android:id="@+id/menu"
+-            android:layout_width="50dp"
+-            android:layout_height="50dp"
+-            android:src="@drawable/menu"/>
+-
+-        <TextView
+-            android:id="@+id/browse"
+-            android:layout_width="100dp"
+-            android:layout_height="50dp"
+-            android:layout_marginStart="55dp"
+-            android:layout_marginTop="4dp"
+-            android:text="Browse"
+-            android:textColor="@color/black"
+-            android:textSize="24sp" />
+-
+-        <ImageView
+-            android:layout_width="40dp"
+-            android:layout_height="40dp"
+-            android:src="@drawable/search"
+-            android:layout_marginStart="290dp"
+-            android:layout_marginTop="4dp"/>
+-        <ImageView
+-            android:layout_width="40dp"
+-            android:layout_height="40dp"
+-            android:src="@drawable/chat"
+-            android:layout_marginStart="350dp"
+-            android:layout_marginTop="4dp"/>
+-
+-        <FrameLayout
+-            android:layout_width="match_parent"
+-            android:layout_height="match_parent"
+-            android:id="@+id/container"/>
+-        <FrameLayout
+-            android:layout_width="match_parent"
+-            android:layout_height="match_parent"
+-            android:id="@+id/container2"
+-            android:layout_above="@id/bottom_nav"/>
+-
+-        <com.google.android.material.bottomnavigation.BottomNavigationView
+-            android:layout_width="match_parent"
+-            android:layout_height="wrap_content"
+-            android:id="@+id/bottom_nav"
+-            app:menu="@menu/bottom_menu"
+-            android:layout_alignParentBottom="true"
+-            android:background="@color/grey"/>
+-
+-    </RelativeLayout>
+-
+-</androidx.drawerlayout.widget.DrawerLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_notificaton.xml
+===================================================================
+--- app/src/main/res/layout/fragment_notificaton.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/res/layout/fragment_notificaton.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
+@@ -1,19 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".bottom_menu.NotificatonFragment">
+-
+-    <!-- TODO: Update blank fragment layout -->
+-    <TextView
+-        android:id="@+id/bottom_notification_fragment"
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        android:text="Notification area"
+-        android:textSize="40dp"
+-        android:background="@color/bottom_notification"
+-        android:textColor="@color/black"
+-        android:gravity="center"/>
+-
+-</FrameLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_privacy.xml
+===================================================================
+--- app/src/main/res/layout/fragment_privacy.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/res/layout/fragment_privacy.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
+@@ -1,18 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".PrivacyFragment"
+-    android:background="@color/black">
+-
+-    <!-- TODO: Update blank fragment layout -->
+-    <TextView
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        android:text="Our privacy policy "
+-        android:textColor="@color/white"
+-        android:textSize="25dp"
+-        android:gravity="center"/>
+-
+-</FrameLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_profile.xml
+===================================================================
+--- app/src/main/res/layout/fragment_profile.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/res/layout/fragment_profile.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
+@@ -1,405 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+-    tools:context=".bottom_menu.ProfileFragment">
+-
+-    <androidx.constraintlayout.widget.ConstraintLayout
+-        android:layout_width="match_parent"
+-        android:layout_height="wrap_content">
+-        <View
+-            android:layout_width="match_parent"
+-            android:layout_height="150dp"
+-            android:background="@drawable/headerupload"
+-            android:id="@+id/viewheader"
+-            app:layout_constraintTop_toTopOf="parent"/>
+-        <FrameLayout
+-            android:id="@+id/layoutprofile"
+-            android:layout_width="match_parent"
+-            android:layout_height="wrap_content"
+-            app:layout_constraintTop_toBottomOf="@+id/viewheader"
+-            app:layout_constraintBottom_toBottomOf="@id/viewheader">
+-
+-
+-            <androidx.cardview.widget.CardView
+-                android:layout_width="match_parent"
+-                android:layout_height="150dp"
+-                android:layout_marginStart="20dp"
+-                android:layout_marginEnd="20dp"
+-                android:layout_marginBottom="15dp"
+-                app:cardBackgroundColor="@color/white"
+-                app:cardCornerRadius="8dp"
+-                app:cardElevation="10dp">
+-
+-                <androidx.constraintlayout.widget.ConstraintLayout
+-                    android:layout_width="match_parent"
+-                    android:layout_height="wrap_content">
+-
+-                    <TextView
+-                        android:id="@+id/textname"
+-                        android:layout_width="match_parent"
+-                        android:layout_height="wrap_content"
+-                        android:layout_marginTop="44dp"
+-                        android:gravity="center"
+-                        android:text="Shilpa Chaursia"
+-                        android:textColor="@color/black"
+-                        android:textSize="18dp"
+-                        android:textStyle="bold"
+-                        app:layout_constraintTop_toTopOf="parent"
+-                        tools:layout_editor_absoluteX="0dp" />
+-
+-                    <TextView
+-                        android:id="@+id/textabout"
+-                        android:layout_width="match_parent"
+-                        android:layout_height="wrap_content"
+-                        android:layout_marginBottom="16dp"
+-                        android:gravity="center"
+-                        android:text="UI/UX designer | App developer"
+-                        android:textColor="@color/grey"
+-                        app:layout_constraintTop_toBottomOf="@id/textname"
+-                        tools:layout_editor_absoluteX="0dp" />
+-
+-                    <TextView
+-                        android:id="@+id/textPost"
+-                        android:layout_width="0dp"
+-                        android:layout_height="wrap_content"
+-                        android:layout_marginStart="32dp"
+-                        android:layout_marginTop="12dp"
+-                        android:gravity="center"
+-                        android:text="956"
+-                        android:textColor="@color/black"
+-                        android:textSize="18dp"
+-                        android:textStyle="bold"
+-                        app:layout_constraintEnd_toStartOf="@id/textfollowers"
+-                        app:layout_constraintStart_toStartOf="parent"
+-                        app:layout_constraintTop_toBottomOf="@id/textabout" />
+-
+-                    <TextView
+-                        android:id="@+id/textfollowers"
+-                        android:layout_width="0dp"
+-                        android:layout_height="wrap_content"
+-
+-                        android:layout_marginTop="12dp"
+-                        android:gravity="center"
+-                        android:text="4.5k"
+-                        android:textColor="@color/black"
+-                        android:textSize="18dp"
+-                        android:textStyle="bold"
+-                        app:layout_constraintEnd_toStartOf="@id/textfollowing"
+-                        app:layout_constraintStart_toEndOf="@id/textPost"
+-                        app:layout_constraintTop_toBottomOf="@id/textabout" />
+-
+-                    <TextView
+-                        android:id="@+id/textfollowing"
+-                        android:layout_width="0dp"
+-                        android:layout_height="wrap_content"
+-                        android:layout_marginTop="12dp"
+-                        android:gravity="center"
+-                        android:text="165"
+-                        android:textColor="@color/black"
+-                        android:textSize="18dp"
+-                        android:textStyle="bold"
+-                        app:layout_constraintEnd_toEndOf="parent"
+-                        app:layout_constraintHorizontal_bias="1.0"
+-                        app:layout_constraintStart_toEndOf="@id/textfollowers"
+-                        app:layout_constraintTop_toBottomOf="@id/textabout" />
+-
+-                    <TextView
+-                        android:id="@+id/textpostlabel"
+-                        android:layout_width="35dp"
+-                        android:layout_height="24dp"
+-                        android:layout_marginBottom="10dp"
+-                        android:gravity="center"
+-                        android:text="Posts"
+-                        android:textAllCaps="true"
+-                        android:textColor="@color/grey"
+-                        android:textSize="10sp"
+-                        app:layout_constraintBottom_toBottomOf="parent"
+-                        app:layout_constraintEnd_toEndOf="@id/textPost"
+-                        app:layout_constraintStart_toStartOf="@id/textPost"
+-                        app:layout_constraintTop_toBottomOf="@id/textPost"
+-                        app:layout_constraintVertical_bias="0.0" />
+-
+-                    <TextView
+-                        android:id="@+id/textfollowerlabel"
+-                        android:layout_width="81dp"
+-                        android:layout_height="22dp"
+-                        android:layout_marginBottom="10dp"
+-                        android:gravity="center"
+-                        android:text="Followers"
+-                        android:textAllCaps="true"
+-                        android:textColor="@color/grey"
+-                        android:textSize="10sp"
+-                        app:layout_constraintBottom_toBottomOf="parent"
+-                        app:layout_constraintEnd_toEndOf="@id/textfollowers"
+-                        app:layout_constraintStart_toStartOf="@id/textfollowers"
+-                        app:layout_constraintTop_toBottomOf="@id/textfollowers"
+-                        app:layout_constraintVertical_bias="0.0" />
+-
+-                    <TextView
+-                        android:id="@+id/textfollowinglabel"
+-                        android:layout_width="81dp"
+-                        android:layout_height="22dp"
+-                        android:layout_marginBottom="10dp"
+-                        android:gravity="center"
+-                        android:text="Following"
+-                        android:textAllCaps="true"
+-                        android:textColor="@color/grey"
+-                        android:textSize="10sp"
+-                        app:layout_constraintBottom_toBottomOf="parent"
+-                        app:layout_constraintEnd_toEndOf="@id/textfollowing"
+-                        app:layout_constraintStart_toStartOf="@id/textfollowing"
+-                        app:layout_constraintTop_toBottomOf="@id/textfollowing"
+-                        app:layout_constraintVertical_bias="0.0" />
+-                </androidx.constraintlayout.widget.ConstraintLayout>
+-
+-            </androidx.cardview.widget.CardView>
+-
+-        </FrameLayout>
+-
+-        <com.makeramen.roundedimageview.RoundedImageView
+-            android:id="@+id/imageprofile"
+-            android:layout_width="80dp"
+-            android:layout_height="80dp"
+-            android:src="@drawable/addtionalphoto"
+-            app:layout_constraintBottom_toTopOf="@+id/layoutprofile"
+-            app:layout_constraintEnd_toEndOf="parent"
+-            app:layout_constraintHorizontal_bias="0.498"
+-            app:layout_constraintStart_toStartOf="parent"
+-            app:layout_constraintTop_toBottomOf="@+id/layoutprofile"
+-            app:layout_constraintVertical_bias="0.885"
+-            app:riv_border_width="1dp"
+-            app:riv_oval="true" />
+-
+-        <TextView
+-            android:id="@+id/texttag"
+-            android:layout_width="wrap_content"
+-            android:layout_height="wrap_content"
+-            app:layout_constraintStart_toStartOf="parent"
+-            app:layout_constraintTop_toBottomOf="@id/layoutprofile"
+-            android:layout_marginStart="20dp"
+-            android:layout_marginTop="5dp"
+-            android:text="Tags"
+-            android:textAllCaps="true"
+-            android:textSize="15sp"
+-            android:textStyle="bold"
+-            android:textColor="@color/black"/>
+-
+-        <LinearLayout
+-            android:id="@+id/layouttags"
+-            android:layout_width="match_parent"
+-            android:layout_height="wrap_content"
+-            android:layout_marginTop="5dp"
+-            android:layout_marginStart="25dp"
+-            android:layout_marginEnd="25dp"
+-            android:orientation="horizontal"
+-            app:layout_constraintTop_toBottomOf="@id/texttag">
+-
+-            <TextView
+-                android:layout_width="wrap_content"
+-                android:layout_height="wrap_content"
+-                android:layout_marginEnd="12dp"
+-                android:background="@drawable/tags_bachground"
+-                android:gravity="center"
+-                android:includeFontPadding="false"
+-                android:paddingStart="10dp"
+-                android:paddingTop="5dp"
+-                android:paddingEnd="10dp"
+-                android:paddingBottom="5dp"
+-                android:text="UI"
+-                android:textColor="@color/black"
+-                android:textSize="15dp"/>
+-            <TextView
+-                android:layout_width="wrap_content"
+-                android:layout_height="wrap_content"
+-                android:layout_marginEnd="12dp"
+-                android:background="@drawable/tags_bachground"
+-                android:gravity="center"
+-                android:includeFontPadding="false"
+-                android:paddingStart="10dp"
+-                android:paddingTop="5dp"
+-                android:paddingEnd="10dp"
+-                android:paddingBottom="5dp"
+-                android:text="UX"
+-                android:textColor="@color/black"
+-                android:textSize="15dp"/>
+-            <TextView
+-                android:layout_width="wrap_content"
+-                android:layout_height="wrap_content"
+-                android:layout_marginEnd="12dp"
+-                android:background="@drawable/tags_bachground"
+-                android:gravity="center"
+-                android:includeFontPadding="false"
+-                android:paddingStart="10dp"
+-                android:paddingTop="5dp"
+-                android:paddingEnd="10dp"
+-                android:paddingBottom="5dp"
+-                android:text="App"
+-                android:textColor="@color/black"
+-                android:textSize="15dp"/>
+-            <TextView
+-                android:layout_width="wrap_content"
+-                android:layout_height="wrap_content"
+-                android:layout_marginEnd="12dp"
+-                android:background="@drawable/tags_bachground"
+-                android:gravity="center"
+-                android:includeFontPadding="false"
+-                android:paddingStart="10dp"
+-                android:paddingTop="5dp"
+-                android:paddingEnd="10dp"
+-                android:paddingBottom="5dp"
+-                android:text="Web"
+-                android:textColor="@color/black"
+-                android:textSize="15dp"/>
+-
+-        </LinearLayout>
+-
+-        <TextView
+-            android:id="@+id/textcollection"
+-            android:layout_width="wrap_content"
+-            android:layout_height="wrap_content"
+-            app:layout_constraintStart_toStartOf="parent"
+-            app:layout_constraintTop_toBottomOf="@id/layouttags"
+-            android:layout_marginStart="20dp"
+-            android:layout_marginTop="25dp"
+-            android:text="Collections"
+-            android:textAllCaps="true"
+-            android:textSize="15sp"
+-            android:textStyle="bold"
+-            android:textColor="@color/black"/>
+-
+-        <HorizontalScrollView
+-            android:id="@+id/layoutcollection"
+-            android:layout_width="match_parent"
+-            android:layout_height="wrap_content"
+-            android:layout_marginTop="8dp"
+-            android:overScrollMode="never"
+-            android:scrollbars="none"
+-            app:layout_constraintTop_toBottomOf="@id/textcollection"
+-            tools:layout_editor_absoluteX="0dp">
+-
+-            <LinearLayout
+-                android:layout_width="wrap_content"
+-                android:layout_height="wrap_content"
+-                android:orientation="horizontal">
+-
+-                <include layout="@layout/collection_layout_1" />
+-
+-                <include layout="@layout/collection_layout_2" />
+-
+-                <include layout="@layout/collections_layout_3" />
+-
+-                <include layout="@layout/collection_layout_4" />
+-
+-            </LinearLayout>
+-        </HorizontalScrollView>
+-
+-        <TextView
+-            android:id="@+id/textlatestpost"
+-            android:layout_width="wrap_content"
+-            android:layout_height="wrap_content"
+-            app:layout_constraintStart_toStartOf="parent"
+-            app:layout_constraintTop_toBottomOf="@id/layoutcollection"
+-            android:layout_marginStart="20dp"
+-            android:layout_marginTop="20dp"
+-            android:text="Latest Post"
+-            android:textAllCaps="true"
+-            android:textSize="15sp"
+-            android:textStyle="bold"
+-            android:textColor="@color/black"/>
+-
+-        <androidx.gridlayout.widget.GridLayout
+-            android:layout_width="match_parent"
+-            android:layout_height="wrap_content"
+-            android:layout_marginTop="8dp"
+-            android:layout_marginEnd="20dp"
+-            app:layout_constraintTop_toBottomOf="@id/textlatestpost"
+-            app:layout_constraintBottom_toBottomOf="parent"
+-            android:layout_marginBottom="10dp"
+-            app:useDefaultMargins="true"
+-            app:columnCount="3">
+-
+-            <com.makeramen.roundedimageview.RoundedImageView
+-                android:layout_width="0dp"
+-                android:layout_height="110dp"
+-                android:scaleType="centerCrop"
+-                android:src="@drawable/p16"
+-                app:layout_columnWeight="1"
+-                app:layout_gravity="fill"
+-                app:riv_corner_radius="6dp"/>
+-
+-            <com.makeramen.roundedimageview.RoundedImageView
+-                android:layout_width="0dp"
+-                android:layout_height="110dp"
+-                android:scaleType="centerCrop"
+-                android:src="@drawable/q"
+-                app:layout_columnWeight="1"
+-                app:layout_gravity="fill"
+-                app:riv_corner_radius="6dp"/>
+-            <com.makeramen.roundedimageview.RoundedImageView
+-                android:layout_width="0dp"
+-                android:layout_height="110dp"
+-                android:scaleType="centerCrop"
+-                android:src="@drawable/p9"
+-                app:layout_columnWeight="1"
+-                app:layout_gravity="fill"
+-                app:riv_corner_radius="6dp"/>
+-            <com.makeramen.roundedimageview.RoundedImageView
+-                android:layout_width="0dp"
+-                android:layout_height="110dp"
+-                android:scaleType="centerCrop"
+-                android:src="@drawable/p10"
+-                app:layout_columnWeight="1"
+-                app:layout_gravity="fill"
+-                app:riv_corner_radius="6dp"/>
+-            <com.makeramen.roundedimageview.RoundedImageView
+-                android:layout_width="0dp"
+-                android:layout_height="110dp"
+-                android:scaleType="centerCrop"
+-                android:src="@drawable/p11"
+-                app:layout_columnWeight="1"
+-                app:layout_gravity="fill"
+-                app:riv_corner_radius="6dp"/>
+-            <com.makeramen.roundedimageview.RoundedImageView
+-                android:layout_width="0dp"
+-                android:layout_height="110dp"
+-                android:scaleType="centerCrop"
+-                android:src="@drawable/p12"
+-                app:layout_columnWeight="1"
+-                app:layout_gravity="fill"
+-                app:riv_corner_radius="6dp"/>
+-            <com.makeramen.roundedimageview.RoundedImageView
+-                android:layout_width="0dp"
+-                android:layout_height="110dp"
+-                android:scaleType="centerCrop"
+-                android:src="@drawable/p13"
+-                app:layout_columnWeight="1"
+-                app:layout_gravity="fill"
+-                app:riv_corner_radius="6dp"/>
+-            <com.makeramen.roundedimageview.RoundedImageView
+-                android:layout_width="0dp"
+-                android:layout_height="110dp"
+-                android:scaleType="centerCrop"
+-                android:src="@drawable/p14"
+-                app:layout_columnWeight="1"
+-                app:layout_gravity="fill"
+-                app:riv_corner_radius="6dp"/>
+-            <com.makeramen.roundedimageview.RoundedImageView
+-                android:layout_width="0dp"
+-                android:layout_height="110dp"
+-                android:scaleType="centerCrop"
+-                android:src="@drawable/p18"
+-                app:layout_columnWeight="1"
+-                app:layout_gravity="fill"
+-                app:riv_corner_radius="6dp"/>
+-
+-        </androidx.gridlayout.widget.GridLayout>
+-
+-
+-    </androidx.constraintlayout.widget.ConstraintLayout>
+-
+-
+-
+-</androidx.core.widget.NestedScrollView>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_save.xml
+===================================================================
+--- app/src/main/res/layout/fragment_save.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/res/layout/fragment_save.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
+@@ -1,19 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".bottom_menu.SaveFragment">
+-
+-    <!-- TODO: Update blank fragment layout -->
+-    <TextView
+-        android:id="@+id/bottom_save_fragment"
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        android:text="Save area"
+-        android:textSize="40dp"
+-        android:background="@color/bottom_save"
+-        android:textColor="@color/black"
+-        android:gravity="center"/>
+-
+-</FrameLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_setting.xml
+===================================================================
+--- app/src/main/res/layout/fragment_setting.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/res/layout/fragment_setting.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
+@@ -1,18 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".SettingFragment"
+-    android:background="@color/black">
+-
+-    <!-- TODO: Update blank fragment layout -->
+-    <TextView
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        android:text="Settings "
+-        android:textColor="@color/white"
+-        android:textSize="25dp"
+-        android:gravity="center"/>
+-
+-</FrameLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_term.xml
+===================================================================
+--- app/src/main/res/layout/fragment_term.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/res/layout/fragment_term.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
+@@ -1,18 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".TermFragment"
+-    android:background="@color/black">
+-
+-    <!-- TODO: Update blank fragment layout -->
+-    <TextView
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        android:text="Term and conditions "
+-        android:textColor="@color/white"
+-        android:textSize="25dp"
+-        android:gravity="center"/>
+-
+-</FrameLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_upload.xml
+===================================================================
+--- app/src/main/res/layout/fragment_upload.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/res/layout/fragment_upload.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
+@@ -1,19 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".bottom_menu.UploadFragment">
+-
+-    <!-- TODO: Update blank fragment layout -->
+-    <TextView
+-        android:id="@+id/bottom_upload_fragment"
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        android:text="Upload area"
+-        android:textSize="40dp"
+-        android:background="@color/bottom_upload"
+-        android:textColor="@color/black"
+-        android:gravity="center"/>
+-
+-</FrameLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/HomeActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/HomeActivity.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/java/com/shilpa/artist_work/HomeActivity.java	(date 1611397815134)
+@@ -7,31 +7,31 @@
+ import androidx.drawerlayout.widget.DrawerLayout;
+ import androidx.appcompat.widget.Toolbar;
+ import androidx.fragment.app.Fragment;
+-import androidx.recyclerview.widget.GridLayoutManager;
+-import androidx.recyclerview.widget.LinearLayoutManager;
+-import androidx.recyclerview.widget.RecyclerView;
+ 
++import android.app.Activity;
+ import android.content.Intent;
+ import android.os.Bundle;
++import android.view.Menu;
+ import android.view.MenuItem;
+-import android.widget.Button;
+-import android.widget.GridLayout;
+-import android.widget.TextView;
+ import android.widget.Toast;
+ 
+ 
+ import com.google.android.material.bottomnavigation.BottomNavigationView;
++import com.google.android.material.floatingactionbutton.FloatingActionButton;
+ import com.google.android.material.navigation.NavigationView;
+-import com.google.firebase.auth.FirebaseAuth;
+-import com.google.firebase.auth.FirebaseUser;
+-import com.shilpa.artist_work.bottom_menu.HomeFragment;
+-import com.shilpa.artist_work.bottom_menu.NotificatonFragment;
+-import com.shilpa.artist_work.bottom_menu.ProfileFragment;
+-import com.shilpa.artist_work.bottom_menu.SaveFragment;
+-import com.shilpa.artist_work.bottom_menu.UploadFragment;
+-import com.shilpa.artist_work.login_activity.EmailActivity;
+-
+-import java.util.ArrayList;
++import com.google.android.material.snackbar.Snackbar;
++import com.shilpa.artist_work.bottom_menu.NotificationActivity;
++import com.shilpa.artist_work.bottom_menu.SaveActivity;
++import com.shilpa.artist_work.bottom_menu.UploadProfile;
++import com.shilpa.artist_work.side_menu.AboutActivity;
++import com.shilpa.artist_work.side_menu.BlogActivity;
++import com.shilpa.artist_work.side_menu.FeedbackActivity;
++import com.shilpa.artist_work.side_menu.HelpActivity;
++import com.shilpa.artist_work.side_menu.PrivacyActivity;
++import com.shilpa.artist_work.side_menu.SettingActivity;
++import com.shilpa.artist_work.side_menu.SignOutActivity;
++import com.shilpa.artist_work.side_menu.TermActivity;
++import com.shilpa.artist_work.side_menu.UploadActivity;
+ 
+ public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+         //side menu
+@@ -44,9 +44,6 @@
+      //bottom navigation
+     BottomNavigationView bnv;
+ 
+-
+-
+-
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+@@ -57,6 +54,7 @@
+         toolbar= findViewById(R.id.toolbar2);
+ 
+         setSupportActionBar(toolbar);
++        getSupportActionBar().setTitle("Dashboard");
+ 
+         nav.bringToFront();
+ 
+@@ -64,103 +62,89 @@
+         drawerLayout.addDrawerListener(toggle);
+         toggle.syncState();
+ 
++        FloatingActionButton fab =(FloatingActionButton)findViewById(R.id.nav_menu);
++        fab.setOnClickListener((view)->{
++            Snackbar.make(view,"Replace with your own Action", Snackbar.LENGTH_LONG)
++                    .setAction("Action", null).show();
++        });
++        NavigationView navigationView=(NavigationView)findViewById(R.id.nav_menu);
++        navigationView.setNavigationItemSelectedListener(this);
++
+ 
+-        nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+-            Fragment temp;
+-            @Override
+-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+-                     switch (item.getItemId()){
+-                    case R.id.blog :
+-                        temp = new BlogFragment();
+-                        Toast.makeText(HomeActivity.this, "Blog panel is open", Toast.LENGTH_SHORT).show();
+-                        break;
+-
+-                    case R.id.upload :
+-
+-                        Toast.makeText(HomeActivity.this, "Upload panel is open", Toast.LENGTH_SHORT).show();
+-                        break;
+-                        case R.id.feedback :
+-                            temp = new FeedbackFragment();
+-                        Toast.makeText(HomeActivity.this, "Feedback panel is open", Toast.LENGTH_SHORT).show();
+-                        break;
+-                    case R.id.setting :
+-                        temp = new SettingFragment();
+-                        Toast.makeText(HomeActivity.this, "Setting panel is open", Toast.LENGTH_SHORT).show();
+-                        break;
+-                    case R.id.help :
+-                        temp = new HelpFragment();
+-                        Toast.makeText(HomeActivity.this, "Help panel is open", Toast.LENGTH_SHORT).show();
+-                        break;
+-                        case R.id.about :
+-                            temp = new AboutFragment();
+-                        Toast.makeText(HomeActivity.this, "About panel is open", Toast.LENGTH_SHORT).show();
+-                        break;
+-                        case R.id.term :
+-                            temp = new TermFragment();
+-                        Toast.makeText(HomeActivity.this, "Term & Condition panel is open", Toast.LENGTH_SHORT).show();
+-
+-                        break;
+-                        case R.id.privacy :
+-                            temp = new PrivacyFragment();
+-                        Toast.makeText(HomeActivity.this, "Privacy panel is open", Toast.LENGTH_SHORT).show();
+-
+-                        break;
+-                    case R.id.sign_out :
+-                        Toast.makeText(HomeActivity.this, "SignOut", Toast.LENGTH_SHORT).show();
+-
+-                        break;
+-
+-                }
+-
+-                getSupportFragmentManager().beginTransaction().replace(R.id.container,temp).commit();
+-                drawerLayout.closeDrawer(GravityCompat.START);
+-                return true;
+-            }
+-        });
+-        //recycleview and cardview
+-
++    }
++//
++
++
++    @Override
++    public void onBackPressed() {
++        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
++            drawerLayout.closeDrawer(GravityCompat.START);
++        }
++        else
++        {
++            super.onBackPressed();
++        }
++
++    }
++
++    @Override
++    public boolean onCreateOptionsMenu(Menu menu) {
++        getMenuInflater().inflate(R.menu.menu,menu);
++        return true;
++
++    }
++
++    @Override
++    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
++        int id = item.getItemId();
++      //  if(id==R.id.action_setting);
++        return true;
++         }
+ 
+-
+-        //bottom navigation
+-        bnv=(BottomNavigationView)findViewById(R.id.bottom_nav);
+-        bnv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+-            @Override
+-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
++    @Override
++    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
++        int id = item.getItemId();
++        if(id==R.id.blog){
++            startActivity(new Intent(this,BlogActivity.class));
++            return true;
+ 
+-                Fragment temp1=null;
+-                switch (item.getItemId()){
+-                    case  R.id.bottom_home:temp1 = new HomeFragment();
+-                    break;
+-                    case  R.id.bottom_upload:temp1 = new UploadFragment();
+-                    break;
+-                    case  R.id.bottom_noti:temp1 = new NotificatonFragment();
+-                    break;
+-                    case  R.id.bottom_save:temp1 = new SaveFragment();
+-                    break;
+-                    case  R.id.bottom_profile:temp1 = new ProfileFragment();
+-                }
+-                getSupportFragmentManager().beginTransaction().replace(R.id.container2,temp1).commit();
+-                return true;
+-            }
+-        });
+-    }
+-//
++        }else if (id==R.id.upload){
++            startActivity(new Intent(this,UploadActivity.class));
++            return true;
++
++        }else if (id==R.id.feedback){
++            startActivity(new Intent(this,FeedbackActivity.class));
++            return true;
++
++        }else if (id==R.id.setting){
++            startActivity(new Intent(this,SettingActivity.class));
++            return true;
++
++        }else if (id==R.id.help){
++            startActivity(new Intent(this,HelpActivity.class));
++            return true;
++
++        }else if (id==R.id.about){
++            startActivity(new Intent(this,AboutActivity.class));
++            return true;
++
++        }else if (id==R.id.term){
++            startActivity(new Intent(this,TermActivity.class));
++            return true;
++
++        }else if (id==R.id.privacy){
++            startActivity(new Intent(this,PrivacyActivity.class));
++            return true;
+ 
++        }else if (id==R.id.sign_out){
++            startActivity(new Intent(this,SignOutActivity.class));
++            return true;
+ 
+-    @Override
+-    public void onBackPressed() {
+-        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+-            drawerLayout.closeDrawer(GravityCompat.START);
+-        }
+-        else
+-        {
+-            super.onBackPressed();
+-        }
++        }
++        DrawerLayout drawerLayout =(DrawerLayout)findViewById(R.id.drawer);
++        drawerLayout.closeDrawer(GravityCompat.START);
+ 
+-    }
+-
+-    @Override
+-    public boolean onNavigationItemSelected(@NonNull MenuItem item) { return true; }
++        return true; }
+ 
+ 
+     }
+Index: app/src/main/res/layout/collection_layout_4.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/collection_layout_4.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/res/layout/collection_layout_4.xml	(date 1611344613934)
+@@ -12,14 +12,14 @@
+         android:scaleType="centerCrop"
+         app:riv_corner_radius="6dp"
+         android:layout_marginLeft="30dp"
+-        android:src="@drawable/p4" />
++        android:src="@drawable/painting2" />
+ 
+     <TextView
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="6dp"
+         android:layout_marginTop="3dp"
+-        android:text="    Krishna"
++        android:text="    Painting"
+         android:textSize="15dp"
+         android:textColor="@color/grey"/>
+ 
+Index: app/src/main/java/com/shilpa/artist_work/login_activity/AuthActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/login_activity/AuthActivity.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/java/com/shilpa/artist_work/login_activity/AuthActivity.java	(date 1611390395331)
+@@ -1,21 +1,45 @@
+ package com.shilpa.artist_work.login_activity;
+ 
++import androidx.annotation.NonNull;
+ import androidx.appcompat.app.AppCompatActivity;
+ 
+ import android.content.Intent;
+ import android.os.Bundle;
++import android.util.Log;
+ import android.view.View;
+ import android.widget.Button;
+ import android.widget.TextView;
++import android.widget.Toast;
+ 
++import com.facebook.AccessToken;
++import com.facebook.CallbackManager;
+ import com.facebook.FacebookActivity;
++import com.facebook.FacebookCallback;
++import com.facebook.FacebookException;
++import com.facebook.login.LoginResult;
++import com.facebook.login.widget.LoginButton;
++import com.google.android.gms.tasks.OnCompleteListener;
++import com.google.android.gms.tasks.Task;
++import com.google.firebase.auth.AuthCredential;
++import com.google.firebase.auth.AuthResult;
++import com.google.firebase.auth.FacebookAuthProvider;
++import com.google.firebase.auth.FirebaseAuth;
+ import com.shilpa.artist_work.R;
+ 
++import java.util.Arrays;
++
+ public class AuthActivity extends AppCompatActivity {
+ 
+     private Button email_button;
+     private Button fb_button;
+     private TextView textView;
++    //fb
++    private CallbackManager callbackManager;
++    private static final String EMAIL = "email";
++    private static String TAG="FbAuth";
++    private FirebaseAuth mAuth;
++
++    LoginButton loginButton;
+ 
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+@@ -23,20 +47,82 @@
+         setContentView(R.layout.activity_auth);
+ 
+         email_button = findViewById(R.id.email_login);
+-        fb_button = findViewById(R.id.fb_login);
++        fb_button = findViewById(R.id.login_button);
+         textView = findViewById(R.id.already_login);
+-    }
++
++        //fb
++
++
++            callbackManager =CallbackManager.Factory.create();
++
++
++            loginButton = (LoginButton) findViewById(R.id.login_button);
++            loginButton.setPermissions(Arrays.asList(EMAIL));
++            // If you are using in a fragment, call loginButton.setFragment(this);
++
++            // Callback registration
++            loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
++                @Override
++                public void onSuccess(LoginResult loginResult) {
++                    handleFacebookAccessToken(loginResult.getAccessToken());
++                }
+ 
++                @Override
++                public void onCancel() {
++                    // App code
++                }
+ 
++                @Override
++                public void onError(FacebookException exception) {
++                    Log.d(TAG,"OnError"+ exception.getMessage());
++                }
++            });
++        }
++
++
++//email
+     public void email_login(View view) {
+         Intent intent = new Intent(AuthActivity.this,EmailActivity.class);
+         startActivity(intent);
+     }
+ 
+-    public void fb_login(View view) {
+-        Intent intent = new Intent(AuthActivity.this, FbActivity.class);
+-        startActivity(intent);
++
++    //fb
++    @Override
++    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
++        callbackManager.onActivityResult(requestCode, resultCode, data);
++        super.onActivityResult(requestCode, resultCode, data);
++    }
++
++    private void handleFacebookAccessToken(AccessToken token) {
++        Log.d(TAG, "handleFacebookAccessToken:" + token);
++
++        AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
++        mAuth.signInWithCredential(credential)
++                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
++                    @Override
++                    public void onComplete(@NonNull Task<AuthResult> task) {
++                        if (task.isSuccessful()) {
++                            // Sign in success, update UI with the signed-in user's information
++                            Log.d(TAG, "signInWithCredential:success");
++                            // FirebaseUser user = mAuth.getCurrentUser();
++                            openProfile();
++                        } else {
++                            // If sign in fails, display a message to the user.
++                            Log.w(TAG, "signInWithCredential:failure", task.getException());
++                            Toast.makeText(AuthActivity.this, "Authentication failed.",
++                                    Toast.LENGTH_SHORT).show();
++
++                        }
++
++                        // ...
++                    }
++                });
+     }
++
++    private void openProfile() {
++    }
++
+ 
+ 
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/login_activity/FbActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/login_activity/FbActivity.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/java/com/shilpa/artist_work/login_activity/FbActivity.java	(date 1611390395672)
+@@ -1,20 +1,109 @@
+ package com.shilpa.artist_work.login_activity;
+ 
++import androidx.annotation.NonNull;
+ import androidx.appcompat.app.AppCompatActivity;
+ 
++import com.facebook.AccessToken;
++import com.facebook.CallbackManager;
++import com.facebook.FacebookCallback;
++import com.facebook.FacebookException;
++import com.facebook.FacebookSdk;
++import com.facebook.appevents.AppEventsLogger;
++
++
+ import android.content.Intent;
+ import android.os.Bundle;
++import android.util.Log;
++import android.widget.Toast;
+ 
++import com.facebook.login.LoginResult;
++import com.facebook.login.widget.LoginButton;
++import com.google.android.gms.tasks.OnCompleteListener;
++import com.google.android.gms.tasks.Task;
++import com.google.firebase.auth.AuthCredential;
++import com.google.firebase.auth.AuthResult;
++import com.google.firebase.auth.FacebookAuthProvider;
++import com.google.firebase.auth.FirebaseAuth;
++import com.google.firebase.auth.FirebaseUser;
+ import com.shilpa.artist_work.HomeActivity;
+ import com.shilpa.artist_work.R;
+ 
++import java.util.Arrays;
++
+ public class FbActivity extends AppCompatActivity {
+ 
++//    private CallbackManager callbackManager;
++//    private static final String EMAIL = "email";
++//    private static String TAG="FbAuth";
++//    private FirebaseAuth mAuth;
++//
++//    LoginButton loginButton;
++
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_fb);
+ 
+-
++//        callbackManager =CallbackManager.Factory.create();
++//
++//
++//        loginButton = (LoginButton) findViewById(R.id.login_button);
++//        loginButton.setPermissions(Arrays.asList(EMAIL));
++//        // If you are using in a fragment, call loginButton.setFragment(this);
++//
++//        // Callback registration
++//        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
++//            @Override
++//            public void onSuccess(LoginResult loginResult) {
++//                handleFacebookAccessToken(loginResult.getAccessToken());
++//            }
++//
++//            @Override
++//            public void onCancel() {
++//                // App code
++//            }
++//
++//            @Override
++//            public void onError(FacebookException exception) {
++//                Log.d(TAG,"OnError"+ exception.getMessage());
++//            }
++//        });
+     }
++
++//    @Override
++//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
++//        callbackManager.onActivityResult(requestCode, resultCode, data);
++//        super.onActivityResult(requestCode, resultCode, data);
++//    }
++//
++//    private void handleFacebookAccessToken(AccessToken token) {
++//        Log.d(TAG, "handleFacebookAccessToken:" + token);
++//
++//        AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
++//        mAuth.signInWithCredential(credential)
++//                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
++//                    @Override
++//                    public void onComplete(@NonNull Task<AuthResult> task) {
++//                        if (task.isSuccessful()) {
++//                            // Sign in success, update UI with the signed-in user's information
++//                            Log.d(TAG, "signInWithCredential:success");
++//                           // FirebaseUser user = mAuth.getCurrentUser();
++//                            openProfile();
++//                        } else {
++//                            // If sign in fails, display a message to the user.
++//                            Log.w(TAG, "signInWithCredential:failure", task.getException());
++//                            Toast.makeText(FbActivity.this, "Authentication failed.",
++//                                    Toast.LENGTH_SHORT).show();
++//
++//                        }
++//
++//                        // ...
++//                    }
++//                });
++//    }
++//
++//    private void openProfile() {
++//    }
++
++
+ }
+\ No newline at end of file
+Index: Android Studio/MyCovidApplication/app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Android Studio/MyCovidApplication/app/src/main/AndroidManifest.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ Android Studio/MyCovidApplication/app/src/main/AndroidManifest.xml	(date 1611469989319)
+@@ -11,7 +11,6 @@
+         android:roundIcon="@mipmap/ic_launcher_round"
+         android:supportsRtl="true"
+         android:theme="@style/AppTheme">
+-        <activity android:name=".SplashActivity"></activity>
+         <activity android:name=".Information" />
+         <activity android:name=".AffectedCountries" />
+         <activity android:name=".MainActivity">
+Index: app/src/main/res/layout/activity_save.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_save.xml	(date 1611399107358)
++++ app/src/main/res/layout/activity_save.xml	(date 1611399107358)
+@@ -0,0 +1,15 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".bottom_menu.SaveActivity">
++    <TextView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:text="Save"
++        android:textStyle="bold"
++        android:textColor="@color/black"
++        android:textSize="50dp"/>
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/bottom_menu/SaveActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/bottom_menu/SaveActivity.java	(date 1611392835852)
++++ app/src/main/java/com/shilpa/artist_work/bottom_menu/SaveActivity.java	(date 1611392835852)
+@@ -0,0 +1,16 @@
++package com.shilpa.artist_work.bottom_menu;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++
++import com.shilpa.artist_work.R;
++
++public class SaveActivity extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_save);
++    }
++}
+\ No newline at end of file
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/build.gradle	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/build.gradle	(date 1611384589510)
+@@ -35,17 +35,23 @@
+     implementation 'com.google.android.material:material:1.2.1'
+     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+ 
++    //firebase
++
+     implementation 'com.google.firebase:firebase-auth:20.0.2'
+     implementation 'com.google.firebase:firebase-core:18.0.1'
+     implementation 'com.google.android.gms:play-services-auth:19.0.0'
+     implementation platform('com.google.firebase:firebase-bom:26.3.0')
++    implementation 'com.google.firebase:firebase-storage:19.2.1'
+ 
+     //noinspection GradleCompatible
+     implementation 'com.android.support:design:28.0.0'
+     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
++
+     testImplementation 'junit:junit:4.13.1'
+     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
++
++    //facebook
+     implementation 'com.facebook.android:facebook-android-sdk:5.15.3'
+ 
+     //picasso
+Index: app/src/main/res/layout/activity_notification.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_notification.xml	(date 1611399107261)
++++ app/src/main/res/layout/activity_notification.xml	(date 1611399107261)
+@@ -0,0 +1,15 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".bottom_menu.NotificationActivity">
++    <TextView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:text="Notification"
++        android:textStyle="bold"
++        android:textColor="@color/black"
++        android:textSize="50dp"/>
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/bottom_menu/NotificationActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/bottom_menu/NotificationActivity.java	(date 1611392555111)
++++ app/src/main/java/com/shilpa/artist_work/bottom_menu/NotificationActivity.java	(date 1611392555111)
+@@ -0,0 +1,16 @@
++package com.shilpa.artist_work.bottom_menu;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++
++import com.shilpa.artist_work.R;
++
++public class NotificationActivity extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_notification);
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_upload2.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_upload2.xml	(date 1611394043520)
++++ app/src/main/res/layout/activity_upload2.xml	(date 1611394043520)
+@@ -0,0 +1,400 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    tools:context=".bottom_menu.UploadProfile">
++
++    <androidx.constraintlayout.widget.ConstraintLayout
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content">
++        <View
++            android:layout_width="match_parent"
++            android:layout_height="150dp"
++            android:background="@drawable/headerupload"
++            android:id="@+id/viewheader"
++            app:layout_constraintTop_toTopOf="parent"/>
++        <FrameLayout
++            android:id="@+id/layoutprofile"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            app:layout_constraintTop_toBottomOf="@+id/viewheader"
++            app:layout_constraintBottom_toBottomOf="@id/viewheader">
++
++
++            <androidx.cardview.widget.CardView
++                android:layout_width="match_parent"
++                android:layout_height="150dp"
++                android:layout_marginStart="20dp"
++                android:layout_marginEnd="20dp"
++                android:layout_marginBottom="15dp"
++                app:cardBackgroundColor="@color/white"
++                app:cardCornerRadius="8dp"
++                app:cardElevation="10dp">
++
++                <androidx.constraintlayout.widget.ConstraintLayout
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content">
++
++                    <TextView
++                        android:id="@+id/textname"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:layout_marginTop="44dp"
++                        android:gravity="center"
++                        android:text="Shilpa Chaursia"
++                        android:textColor="@color/black"
++                        android:textSize="18dp"
++                        android:textStyle="bold"
++                        app:layout_constraintTop_toTopOf="parent"
++                        tools:layout_editor_absoluteX="0dp" />
++
++                    <TextView
++                        android:id="@+id/textabout"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:layout_marginBottom="16dp"
++                        android:gravity="center"
++                        android:text="UI/UX designer | App developer"
++                        android:textColor="@color/grey"
++                        app:layout_constraintTop_toBottomOf="@id/textname"
++                        tools:layout_editor_absoluteX="0dp" />
++
++                    <TextView
++                        android:id="@+id/textPost"
++                        android:layout_width="0dp"
++                        android:layout_height="wrap_content"
++                        android:layout_marginStart="32dp"
++                        android:layout_marginTop="12dp"
++                        android:gravity="center"
++                        android:text="956"
++                        android:textColor="@color/black"
++                        android:textSize="18dp"
++                        android:textStyle="bold"
++                        app:layout_constraintEnd_toStartOf="@id/textfollowers"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toBottomOf="@id/textabout" />
++
++                    <TextView
++                        android:id="@+id/textfollowers"
++                        android:layout_width="0dp"
++                        android:layout_height="wrap_content"
++
++                        android:layout_marginTop="12dp"
++                        android:gravity="center"
++                        android:text="4.5k"
++                        android:textColor="@color/black"
++                        android:textSize="18dp"
++                        android:textStyle="bold"
++                        app:layout_constraintEnd_toStartOf="@id/textfollowing"
++                        app:layout_constraintStart_toEndOf="@id/textPost"
++                        app:layout_constraintTop_toBottomOf="@id/textabout" />
++
++                    <TextView
++                        android:id="@+id/textfollowing"
++                        android:layout_width="0dp"
++                        android:layout_height="wrap_content"
++                        android:layout_marginTop="12dp"
++                        android:gravity="center"
++                        android:text="165"
++                        android:textColor="@color/black"
++                        android:textSize="18dp"
++                        android:textStyle="bold"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintHorizontal_bias="1.0"
++                        app:layout_constraintStart_toEndOf="@id/textfollowers"
++                        app:layout_constraintTop_toBottomOf="@id/textabout" />
++
++                    <TextView
++                        android:id="@+id/textpostlabel"
++                        android:layout_width="35dp"
++                        android:layout_height="24dp"
++                        android:layout_marginBottom="10dp"
++                        android:gravity="center"
++                        android:text="Posts"
++                        android:textAllCaps="true"
++                        android:textColor="@color/grey"
++                        android:textSize="10sp"
++                        app:layout_constraintBottom_toBottomOf="parent"
++                        app:layout_constraintEnd_toEndOf="@id/textPost"
++                        app:layout_constraintStart_toStartOf="@id/textPost"
++                        app:layout_constraintTop_toBottomOf="@id/textPost"
++                        app:layout_constraintVertical_bias="0.0" />
++
++                    <TextView
++                        android:id="@+id/textfollowerlabel"
++                        android:layout_width="81dp"
++                        android:layout_height="22dp"
++                        android:layout_marginBottom="10dp"
++                        android:gravity="center"
++                        android:text="Followers"
++                        android:textAllCaps="true"
++                        android:textColor="@color/grey"
++                        android:textSize="10sp"
++                        app:layout_constraintBottom_toBottomOf="parent"
++                        app:layout_constraintEnd_toEndOf="@id/textfollowers"
++                        app:layout_constraintStart_toStartOf="@id/textfollowers"
++                        app:layout_constraintTop_toBottomOf="@id/textfollowers"
++                        app:layout_constraintVertical_bias="0.0" />
++
++                    <TextView
++                        android:id="@+id/textfollowinglabel"
++                        android:layout_width="81dp"
++                        android:layout_height="22dp"
++                        android:layout_marginBottom="10dp"
++                        android:gravity="center"
++                        android:text="Following"
++                        android:textAllCaps="true"
++                        android:textColor="@color/grey"
++                        android:textSize="10sp"
++                        app:layout_constraintBottom_toBottomOf="parent"
++                        app:layout_constraintEnd_toEndOf="@id/textfollowing"
++                        app:layout_constraintStart_toStartOf="@id/textfollowing"
++                        app:layout_constraintTop_toBottomOf="@id/textfollowing"
++                        app:layout_constraintVertical_bias="0.0" />
++                </androidx.constraintlayout.widget.ConstraintLayout>
++
++            </androidx.cardview.widget.CardView>
++
++        </FrameLayout>
++
++        <com.makeramen.roundedimageview.RoundedImageView
++            android:id="@+id/imageprofile"
++            android:layout_width="80dp"
++            android:layout_height="80dp"
++            android:src="@drawable/addtionalphoto"
++            app:layout_constraintBottom_toTopOf="@+id/layoutprofile"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintHorizontal_bias="0.498"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/layoutprofile"
++            app:layout_constraintVertical_bias="0.885"
++            app:riv_border_width="1dp"
++            app:riv_oval="true" />
++
++        <TextView
++            android:id="@+id/texttag"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@id/layoutprofile"
++            android:layout_marginStart="20dp"
++            android:layout_marginTop="5dp"
++            android:text="Tags"
++            android:textAllCaps="true"
++            android:textSize="15sp"
++            android:textStyle="bold"
++            android:textColor="@color/black"/>
++
++        <LinearLayout
++            android:id="@+id/layouttags"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:layout_marginTop="5dp"
++            android:layout_marginStart="25dp"
++            android:layout_marginEnd="25dp"
++            android:orientation="horizontal"
++            app:layout_constraintTop_toBottomOf="@id/texttag">
++
++            <TextView
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_marginEnd="12dp"
++                android:background="@drawable/tags_bachground"
++                android:gravity="center"
++                android:includeFontPadding="false"
++                android:paddingStart="10dp"
++                android:paddingTop="5dp"
++                android:paddingEnd="10dp"
++                android:paddingBottom="5dp"
++                android:text="UI"
++                android:textColor="@color/black"
++                android:textSize="15dp"/>
++            <TextView
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_marginEnd="12dp"
++                android:background="@drawable/tags_bachground"
++                android:gravity="center"
++                android:includeFontPadding="false"
++                android:paddingStart="10dp"
++                android:paddingTop="5dp"
++                android:paddingEnd="10dp"
++                android:paddingBottom="5dp"
++                android:text="UX"
++                android:textColor="@color/black"
++                android:textSize="15dp"/>
++            <TextView
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_marginEnd="12dp"
++                android:background="@drawable/tags_bachground"
++                android:gravity="center"
++                android:includeFontPadding="false"
++                android:paddingStart="10dp"
++                android:paddingTop="5dp"
++                android:paddingEnd="10dp"
++                android:paddingBottom="5dp"
++                android:text="App"
++                android:textColor="@color/black"
++                android:textSize="15dp"/>
++            <TextView
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_marginEnd="12dp"
++                android:background="@drawable/tags_bachground"
++                android:gravity="center"
++                android:includeFontPadding="false"
++                android:paddingStart="10dp"
++                android:paddingTop="5dp"
++                android:paddingEnd="10dp"
++                android:paddingBottom="5dp"
++                android:text="Web"
++                android:textColor="@color/black"
++                android:textSize="15dp"/>
++
++        </LinearLayout>
++
++        <TextView
++            android:id="@+id/textcollection"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@id/layouttags"
++            android:layout_marginStart="20dp"
++            android:layout_marginTop="25dp"
++            android:text="Collections"
++            android:textAllCaps="true"
++            android:textSize="15sp"
++            android:textStyle="bold"
++            android:textColor="@color/black"/>
++
++        <HorizontalScrollView
++            android:id="@+id/layoutcollection"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:layout_marginTop="8dp"
++            android:overScrollMode="never"
++            android:scrollbars="none"
++            app:layout_constraintTop_toBottomOf="@id/textcollection"
++            tools:layout_editor_absoluteX="0dp">
++
++            <LinearLayout
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:orientation="horizontal">
++
++                <include layout="@layout/collection_layout_1" />
++
++                <include layout="@layout/collection_layout_2" />
++
++                <include layout="@layout/collections_layout_3" />
++
++                <include layout="@layout/collection_layout_4" />
++
++            </LinearLayout>
++        </HorizontalScrollView>
++
++        <TextView
++            android:id="@+id/textlatestpost"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@id/layoutcollection"
++            android:layout_marginStart="20dp"
++            android:layout_marginTop="20dp"
++            android:text="Latest Post"
++            android:textAllCaps="true"
++            android:textSize="15sp"
++            android:textStyle="bold"
++            android:textColor="@color/black"/>
++
++        <androidx.gridlayout.widget.GridLayout
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:layout_marginTop="8dp"
++            android:layout_marginEnd="20dp"
++            app:layout_constraintTop_toBottomOf="@id/textlatestpost"
++            app:layout_constraintBottom_toBottomOf="parent"
++            android:layout_marginBottom="10dp"
++            app:useDefaultMargins="true"
++            app:columnCount="3">
++
++            <com.makeramen.roundedimageview.RoundedImageView
++                android:layout_width="0dp"
++                android:layout_height="110dp"
++                android:scaleType="centerCrop"
++                android:src="@drawable/painting12"
++                app:layout_columnWeight="1"
++                app:layout_gravity="fill"
++                app:riv_corner_radius="6dp"/>
++
++            <com.makeramen.roundedimageview.RoundedImageView
++                android:layout_width="0dp"
++                android:layout_height="110dp"
++                android:scaleType="centerCrop"
++                android:src="@drawable/q"
++                app:layout_columnWeight="1"
++                app:layout_gravity="fill"
++                app:riv_corner_radius="6dp"/>
++            <com.makeramen.roundedimageview.RoundedImageView
++                android:layout_width="0dp"
++                android:layout_height="110dp"
++                android:scaleType="centerCrop"
++                android:src="@drawable/painting13"
++                app:layout_columnWeight="1"
++                app:layout_gravity="fill"
++                app:riv_corner_radius="6dp"/>
++            <com.makeramen.roundedimageview.RoundedImageView
++                android:layout_width="0dp"
++                android:layout_height="110dp"
++                android:scaleType="centerCrop"
++                android:src="@drawable/painting6"
++                app:layout_columnWeight="1"
++                app:layout_gravity="fill"
++                app:riv_corner_radius="6dp"/>
++            <com.makeramen.roundedimageview.RoundedImageView
++                android:layout_width="0dp"
++                android:layout_height="110dp"
++                android:scaleType="centerCrop"
++                android:src="@drawable/painting5"
++                app:layout_columnWeight="1"
++                app:layout_gravity="fill"
++                app:riv_corner_radius="6dp"/>
++            <com.makeramen.roundedimageview.RoundedImageView
++                android:layout_width="0dp"
++                android:layout_height="110dp"
++                android:scaleType="centerCrop"
++                android:src="@drawable/painting7"
++                app:layout_columnWeight="1"
++                app:layout_gravity="fill"
++                app:riv_corner_radius="6dp"/>
++            <com.makeramen.roundedimageview.RoundedImageView
++                android:layout_width="0dp"
++                android:layout_height="110dp"
++                android:scaleType="centerCrop"
++                android:src="@drawable/painting8"
++                app:layout_columnWeight="1"
++                app:layout_gravity="fill"
++                app:riv_corner_radius="6dp"/>
++            <com.makeramen.roundedimageview.RoundedImageView
++                android:layout_width="0dp"
++                android:layout_height="110dp"
++                android:scaleType="centerCrop"
++                android:src="@drawable/painting9"
++                app:layout_columnWeight="1"
++                app:layout_gravity="fill"
++                app:riv_corner_radius="6dp"/>
++            <com.makeramen.roundedimageview.RoundedImageView
++                android:layout_width="0dp"
++                android:layout_height="110dp"
++                android:scaleType="centerCrop"
++                android:src="@drawable/q"
++                app:layout_columnWeight="1"
++                app:layout_gravity="fill"
++                app:riv_corner_radius="6dp"/>
++
++        </androidx.gridlayout.widget.GridLayout>
++    </androidx.constraintlayout.widget.ConstraintLayout>
++</androidx.core.widget.NestedScrollView>
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/bottom_menu/UploadActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/bottom_menu/UploadActivity.java	(date 1611392532064)
++++ app/src/main/java/com/shilpa/artist_work/bottom_menu/UploadActivity.java	(date 1611392532064)
+@@ -0,0 +1,16 @@
++package com.shilpa.artist_work.bottom_menu;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++
++import com.shilpa.artist_work.R;
++
++public class UploadActivity extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_upload2);
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_home2.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_home2.xml	(date 1611392450448)
++++ app/src/main/res/layout/activity_home2.xml	(date 1611392450448)
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".bottom_menu.HomeActivity">
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/bottom_menu/HomeActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/bottom_menu/HomeActivity.java	(date 1611392532088)
++++ app/src/main/java/com/shilpa/artist_work/bottom_menu/HomeActivity.java	(date 1611392532088)
+@@ -0,0 +1,16 @@
++package com.shilpa.artist_work.bottom_menu;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++
++import com.shilpa.artist_work.R;
++
++public class HomeActivity extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_home2);
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_sign_out.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_sign_out.xml	(date 1611399106970)
++++ app/src/main/res/layout/activity_sign_out.xml	(date 1611399106970)
+@@ -0,0 +1,16 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".side_menu.SignOutActivity">
++    <TextView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:text="SignOut"
++        android:textStyle="bold"
++        android:textColor="@color/black"
++        android:textSize="50dp"/>
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/side_menu/SignOutActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/side_menu/SignOutActivity.java	(date 1611396358456)
++++ app/src/main/java/com/shilpa/artist_work/side_menu/SignOutActivity.java	(date 1611396358456)
+@@ -0,0 +1,17 @@
++package com.shilpa.artist_work.side_menu;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++
++import com.shilpa.artist_work.R;
++
++public class SignOutActivity extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_sign_out);
++        getSupportActionBar().setTitle("Dashboard");
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_fb.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_fb.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/res/layout/activity_fb.xml	(date 1611390395545)
+@@ -9,4 +9,6 @@
+ 
+ 
+ 
++
++
+ </RelativeLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_privacy.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_privacy.xml	(date 1611399107325)
++++ app/src/main/res/layout/activity_privacy.xml	(date 1611399107325)
+@@ -0,0 +1,15 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".side_menu.PrivacyActivity">
++    <TextView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:text="Privacy"
++        android:textStyle="bold"
++        android:textColor="@color/black"
++        android:textSize="50dp"/>
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/side_menu/PrivacyActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/side_menu/PrivacyActivity.java	(date 1611396358417)
++++ app/src/main/java/com/shilpa/artist_work/side_menu/PrivacyActivity.java	(date 1611396358417)
+@@ -0,0 +1,17 @@
++package com.shilpa.artist_work.side_menu;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++
++import com.shilpa.artist_work.R;
++
++public class PrivacyActivity extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_privacy);
++        getSupportActionBar().setTitle("Dashboard");
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_term.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_term.xml	(date 1611399107137)
++++ app/src/main/res/layout/activity_term.xml	(date 1611399107137)
+@@ -0,0 +1,16 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".side_menu.TermActivity">
++    <TextView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:text="Term and Condition"
++        android:textStyle="bold"
++        android:textColor="@color/black"
++        android:textSize="50dp"/>
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/side_menu/TermActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/side_menu/TermActivity.java	(date 1611396358497)
++++ app/src/main/java/com/shilpa/artist_work/side_menu/TermActivity.java	(date 1611396358497)
+@@ -0,0 +1,17 @@
++package com.shilpa.artist_work.side_menu;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++
++import com.shilpa.artist_work.R;
++
++public class TermActivity extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_term);
++        getSupportActionBar().setTitle("Dashboard");
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_auth.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_auth.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/res/layout/activity_auth.xml	(date 1611390395732)
+@@ -12,18 +12,18 @@
+         android:id="@+id/logo"
+         android:layout_width="150dp"
+         android:layout_height="250dp"
+-        android:src="@drawable/splashbg"
+-        android:layout_marginStart="130dp"/>
++        android:layout_marginStart="130dp"
++        android:src="@drawable/splashbg" />
+ 
+     <TextView
+         android:layout_width="250dp"
+         android:layout_height="40dp"
++        android:layout_marginLeft="80dp"
++        android:layout_marginTop="250dp"
+         android:text="CONNECT.YOUR.SELF"
+-        android:textSize="24dp"
+-        android:textStyle="bold"
+         android:textColor="@color/black"
+-        android:layout_marginTop="250dp"
+-        android:layout_marginLeft="80dp" />
++        android:textSize="24dp"
++        android:textStyle="bold" />
+ 
+     <Button
+         android:id="@+id/email_login"
+@@ -36,14 +36,12 @@
+         android:onClick="email_login"
+         />
+ 
+-    <Button
+-        android:id="@+id/fb_login"
+-        android:layout_width="250dp"
+-        android:layout_height="40dp"
+-        android:text="Login with facebook"
++    <com.facebook.login.widget.LoginButton
++        android:id="@+id/login_button"
++        android:layout_width="240dp"
++        android:layout_height="wrap_content"
+         android:layout_marginLeft="100dp"
+-        android:layout_marginTop="500dp"
+-        android:onClick="fb_login"/>
++        android:layout_marginTop="500dp" />
+ 
+     <TextView
+         android:id="@+id/already_login"
+Index: app/src/main/res/layout/activity_about.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_about.xml	(date 1611399107422)
++++ app/src/main/res/layout/activity_about.xml	(date 1611399107422)
+@@ -0,0 +1,17 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".side_menu.AboutActivity">
++
++    <TextView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:text="About"
++        android:textStyle="bold"
++        android:textColor="@color/black"
++        android:textSize="50dp"/>
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/side_menu/AboutActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/side_menu/AboutActivity.java	(date 1611396358473)
++++ app/src/main/java/com/shilpa/artist_work/side_menu/AboutActivity.java	(date 1611396358473)
+@@ -0,0 +1,17 @@
++package com.shilpa.artist_work.side_menu;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++
++import com.shilpa.artist_work.R;
++
++public class AboutActivity extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_about);
++        getSupportActionBar().setTitle("Dashboard");
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/bottom_menu/UploadProfile.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/bottom_menu/UploadProfile.java	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/java/com/shilpa/artist_work/bottom_menu/UploadProfile.java	(date 1611358736789)
+@@ -1,31 +1,144 @@
+ package com.shilpa.artist_work.bottom_menu;
+ 
++import androidx.annotation.NonNull;
++import androidx.annotation.Nullable;
+ import androidx.appcompat.app.AppCompatActivity;
+ 
++import android.Manifest;
++import android.app.ProgressDialog;
++import android.content.Intent;
+ import android.graphics.Bitmap;
++import android.graphics.BitmapFactory;
++import android.net.Uri;
+ import android.os.Bundle;
+ import android.view.View;
+ import android.widget.Button;
+ import android.widget.ImageView;
++import android.widget.Toast;
+ 
++import com.google.android.gms.tasks.OnSuccessListener;
++import com.google.firebase.storage.FirebaseStorage;
++import com.google.firebase.storage.OnProgressListener;
++import com.google.firebase.storage.StorageReference;
++import com.google.firebase.storage.UploadTask;
++import com.karumi.dexter.Dexter;
++import com.karumi.dexter.PermissionToken;
++import com.karumi.dexter.listener.PermissionDeniedResponse;
++import com.karumi.dexter.listener.PermissionGrantedResponse;
++import com.karumi.dexter.listener.PermissionRequest;
++import com.karumi.dexter.listener.single.PermissionListener;
+ import com.shilpa.artist_work.R;
+ 
++import java.io.InputStream;
+ import java.net.URI;
+ 
+ public class UploadProfile extends AppCompatActivity {
+ 
+     ImageView img;
+     Button upload,browse;
+-    URI filepath;
++    Uri filepath;
+     Bitmap bitmap;
+ 
++
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_upload_profile);
+ 
+ 
+-    }
++        img= findViewById(R.id.upImg);
++        upload= findViewById(R.id.uploadup);
++        browse= findViewById(R.id.browseup);
++
++
++            browse.setOnClickListener(new View.OnClickListener() {
++                @Override
++                public void onClick(View v) {
++                    Dexter.withActivity(UploadProfile.this)
++                            .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
++                            .withListener(new PermissionListener() {
++                                @Override
++                                public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
++                                    Intent intent = new Intent(Intent.ACTION_PICK);
++                                    intent.setType("image/*");
++                                    startActivityForResult(Intent.createChooser(intent, "Please choose an image"), 1);
++
++                                }
++
++                                @Override
++                                public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
++
++                                }
++
++                                @Override
++                                public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken permissionToken) {
++                                    permissionToken.continuePermissionRequest();
++                                }
++                            }).check();
++
++                }
++            });
++
++        upload.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                uploadtofirebase();
++            }
++        });
++    }
++
++
++
++    @Override
++    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
++
++        if(requestCode==1 && resultCode==RESULT_OK){
++            filepath=data.getData();
++            try {
++                InputStream inputStream=getContentResolver().openInputStream(filepath);
++                bitmap= BitmapFactory.decodeStream(inputStream);
++                img.setImageBitmap(bitmap);
++
++            }catch (Exception e){
++
++            }
++        }
++        super.onActivityResult(requestCode, resultCode, data);
++
++    }
++
++
++    public void uploadtofirebase() {
++
++        ProgressDialog dialog = new ProgressDialog(this);
++        dialog.setTitle("File uploader");
++        dialog.show();
++
++
++        FirebaseStorage storage = FirebaseStorage.getInstance();
++        StorageReference uploader =storage.getReference().child("image1");
++        uploader.putFile(filepath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
++            @Override
++            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
++
++                dialog.dismiss();
++                Toast.makeText(UploadProfile.this, "File uploaded", Toast.LENGTH_SHORT).show();
++
++            }
++        })
++                .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
++                    @Override
++                    public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
++                        float percent =(100*snapshot.getBytesTransferred())/snapshot.getTotalByteCount();
++                        dialog.setMessage("Uploaded" +(int)percent +  " %");
++
++                    }
++                });
++
++    }
++
++
++
++}
+ 
+ 
+-}
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_help.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_help.xml	(date 1611399107224)
++++ app/src/main/res/layout/activity_help.xml	(date 1611399107224)
+@@ -0,0 +1,16 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".side_menu.HelpActivity">
++    <TextView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:text="Help"
++        android:textStyle="bold"
++        android:textColor="@color/black"
++        android:textSize="50dp"/>
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/side_menu/HelpActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/side_menu/HelpActivity.java	(date 1611396358369)
++++ app/src/main/java/com/shilpa/artist_work/side_menu/HelpActivity.java	(date 1611396358369)
+@@ -0,0 +1,17 @@
++package com.shilpa.artist_work.side_menu;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++
++import com.shilpa.artist_work.R;
++
++public class HelpActivity extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_help);
++        getSupportActionBar().setTitle("Dashboard");
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_setting.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_setting.xml	(date 1611399107109)
++++ app/src/main/res/layout/activity_setting.xml	(date 1611399107109)
+@@ -0,0 +1,16 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".side_menu.SettingActivity">
++    <TextView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:text="Setting"
++        android:textStyle="bold"
++        android:textColor="@color/black"
++        android:textSize="50dp"/>
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/side_menu/SettingActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/side_menu/SettingActivity.java	(date 1611396358513)
++++ app/src/main/java/com/shilpa/artist_work/side_menu/SettingActivity.java	(date 1611396358513)
+@@ -0,0 +1,17 @@
++package com.shilpa.artist_work.side_menu;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++
++import com.shilpa.artist_work.R;
++
++public class SettingActivity extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_setting);
++        getSupportActionBar().setTitle("Dashboard");
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_upload_profile.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_upload_profile.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/res/layout/activity_upload_profile.xml	(date 1611384369669)
+@@ -5,7 +5,8 @@
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    tools:context=".bottom_menu.UploadProfile">
++    tools:context=".bottom_menu.UploadProfile"
++    android:background="@color/white">
+ 
+     <ImageView
+         android:id="@+id/upImg"
+@@ -22,13 +23,22 @@
+         android:text="Browse"
+         android:layout_marginTop="400dp"
+         android:layout_marginLeft="20dp"
+-        android:layout_marginRight="10dp"/>
++        android:layout_marginRight="10dp"
++        android:textColor="@color/black"
++        android:textSize="30sp"
++        android:textStyle="bold"
++        android:gravity="center"/>
+     <Button
+         android:id="@+id/uploadup"
+         android:layout_width="150dp"
+         android:layout_height="50dp"
+         android:text="Upload"
+         android:layout_marginTop="400dp"
+-        android:layout_marginLeft="220dp"/>
++        android:layout_marginLeft="190dp"
++        android:layout_marginRight="10dp"
++        android:textColor="@color/black"
++        android:textSize="30sp"
++        android:textStyle="bold"
++        android:gravity="center"/>
+ 
+ </RelativeLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_feedback.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_feedback.xml	(date 1611399107296)
++++ app/src/main/res/layout/activity_feedback.xml	(date 1611399107296)
+@@ -0,0 +1,16 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".side_menu.FeedbackActivity">
++    <TextView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:text="Feedback"
++        android:textStyle="bold"
++        android:textColor="@color/black"
++        android:textSize="50dp"/>
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/side_menu/FeedbackActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/side_menu/FeedbackActivity.java	(date 1611396358395)
++++ app/src/main/java/com/shilpa/artist_work/side_menu/FeedbackActivity.java	(date 1611396358395)
+@@ -0,0 +1,17 @@
++package com.shilpa.artist_work.side_menu;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++
++import com.shilpa.artist_work.R;
++
++public class FeedbackActivity extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_feedback);
++        getSupportActionBar().setTitle("Dashboard");
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_upload.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_upload.xml	(date 1611391920202)
++++ app/src/main/res/layout/activity_upload.xml	(date 1611391920202)
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".side_menu.UploadActivity">
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/side_menu/UploadActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/side_menu/UploadActivity.java	(date 1611396358346)
++++ app/src/main/java/com/shilpa/artist_work/side_menu/UploadActivity.java	(date 1611396358346)
+@@ -0,0 +1,17 @@
++package com.shilpa.artist_work.side_menu;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++
++import com.shilpa.artist_work.R;
++
++public class UploadActivity extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_upload);
++        getSupportActionBar().setTitle("Dashboard");
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_blog.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_blog.xml	(date 1611399107485)
++++ app/src/main/res/layout/activity_blog.xml	(date 1611399107485)
+@@ -0,0 +1,15 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".side_menu.BlogActivity">
++<TextView
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:text="BLOG"
++    android:textStyle="bold"
++    android:textColor="@color/black"
++    android:textSize="50dp"/>
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/shilpa/artist_work/side_menu/BlogActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/shilpa/artist_work/side_menu/BlogActivity.java	(date 1611396358438)
++++ app/src/main/java/com/shilpa/artist_work/side_menu/BlogActivity.java	(date 1611396358438)
+@@ -0,0 +1,17 @@
++package com.shilpa.artist_work.side_menu;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++
++import com.shilpa.artist_work.R;
++
++public class BlogActivity extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_blog);
++        getSupportActionBar().setTitle("Dashboard");
++    }
++}
+\ No newline at end of file
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/AndroidManifest.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/AndroidManifest.xml	(date 1611392552098)
+@@ -3,6 +3,7 @@
+     package="com.shilpa.artist_work">
+ 
+     <uses-permission android:name="android.permission.INTERNET" />
++    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+ 
+     <application
+         android:allowBackup="true"
+@@ -11,15 +12,28 @@
+         android:roundIcon="@mipmap/ic_launcher_round"
+         android:supportsRtl="true"
+         android:theme="@style/Theme.Artist_Work">
+-        <activity android:name=".bottom_menu.UploadProfile"
+-            android:theme="@style/FullScreen"> </activity>
++        <activity android:name=".bottom_menu.SaveActivity"></activity>
++        <activity android:name=".bottom_menu.NotificationActivity" />
++        <activity android:name=".bottom_menu.UploadActivity" />
++        <activity android:name=".bottom_menu.HomeActivity" />
++        <activity android:name=".side_menu.SignOutActivity" />
++        <activity android:name=".side_menu.PrivacyActivity" />
++        <activity android:name=".side_menu.TermActivity" />
++        <activity android:name=".side_menu.AboutActivity" />
++        <activity android:name=".side_menu.HelpActivity" />
++        <activity android:name=".side_menu.SettingActivity" />
++        <activity android:name=".side_menu.FeedbackActivity" />
++        <activity android:name=".side_menu.UploadActivity" />
++        <activity android:name=".side_menu.BlogActivity" />
++        <activity
++            android:name=".bottom_menu.UploadProfile"
++            android:theme="@style/FullScreen" />
+         <activity android:name=".login_activity.LoginActivity" />
+         <activity android:name=".login_activity.FbActivity" />
+         <activity android:name=".login_activity.EmailActivity" />
+         <activity android:name=".login_activity.AuthActivity" />
+         <activity android:name=".HomeActivity" />
+         <activity android:name=".SplashActivity">
+-
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+ 
+Index: Android Studio/MyCovidApplication/.idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Android Studio/MyCovidApplication/.idea/vcs.xml	(date 1611468515758)
++++ Android Studio/MyCovidApplication/.idea/vcs.xml	(date 1611468515758)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$/../.." vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/res/layout/collection_layout_2.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/collection_layout_2.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/res/layout/collection_layout_2.xml	(date 1611344614001)
+@@ -11,7 +11,7 @@
+         android:scaleType="centerCrop"
+         app:riv_corner_radius="6dp"
+         android:layout_marginLeft="30dp"
+-        android:src="@drawable/p2" />
++        android:src="@drawable/painting1" />
+ 
+     <TextView
+         android:layout_width="match_parent"
+Index: app/src/main/res/layout/collection_layout_1.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/collection_layout_1.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/res/layout/collection_layout_1.xml	(date 1611344614062)
+@@ -11,14 +11,14 @@
+         android:scaleType="centerCrop"
+         app:riv_corner_radius="6dp"
+         android:layout_marginLeft="30dp"
+-        android:src="@drawable/p1" />
++        android:src="@drawable/painting4" />
+ 
+     <TextView
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="6dp"
+         android:layout_marginTop="3dp"
+-        android:text="    Golden Tample"
++        android:text="    Nature"
+         android:textSize="15dp"
+         android:textColor="@color/grey"/>
+ 
+Index: app/src/main/res/layout/collections_layout_3.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/collections_layout_3.xml	(revision c1040ccf1d94733a362d37eb76e07402f32fc145)
++++ app/src/main/res/layout/collections_layout_3.xml	(date 1611345180367)
+@@ -12,14 +12,14 @@
+         android:scaleType="centerCrop"
+         app:riv_corner_radius="6dp"
+         android:layout_marginLeft="30dp"
+-        android:src="@drawable/p3" />
++        android:src="@drawable/painting20" />
+ 
+     <TextView
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="6dp"
+         android:layout_marginTop="3dp"
+-        android:text="    Gurga"
++        android:text="    Beauty"
+         android:textSize="15dp"
+         android:textColor="@color/grey"/>
+ 
+diff --git app/src/main/res/drawable/p1.jpg app/src/main/res/drawable/p1.jpg
+deleted file mode 100644
+index d4bc4036a382476a6531bfafa504da541700eee4..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git app/src/main/res/drawable/p2.jpg app/src/main/res/drawable/p2.jpg
+deleted file mode 100644
+index 581df5eceac0397d6cfe29bb18fd306c5331e3c8..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git app/src/main/res/drawable/p3.JPG app/src/main/res/drawable/p3.JPG
+deleted file mode 100644
+index 2d6cd8b40039d0635638d3ec7c8a5bdc9a20e92e..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git app/src/main/res/drawable/p4.gif app/src/main/res/drawable/p4.gif
+deleted file mode 100644
+index b54c2bdf30d3cc7ce05e77260cf50213e6360911..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git app/src/main/res/drawable/p5.jpg app/src/main/res/drawable/p5.jpg
+deleted file mode 100644
+index 4d355b62e44e2162c9ec6c81709d2699e005c350..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git app/src/main/res/drawable/p7.jpg app/src/main/res/drawable/p7.jpg
+deleted file mode 100644
+index 0cc3f21de1c33edc586138226023501217a908fb..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git app/src/main/res/drawable/p8.jpg app/src/main/res/drawable/p8.jpg
+deleted file mode 100644
+index d7f2d020b34dcd5718c00a02c8b0afed6ab05665..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git app/src/main/res/drawable/p9.jpg app/src/main/res/drawable/p9.jpg
+deleted file mode 100644
+index 4786cefb2470460a142e99fb4008841570d36082..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git app/src/main/res/drawable/p10.jpg app/src/main/res/drawable/p10.jpg
+deleted file mode 100644
+index ad2ed86606a35045ed3f5027a069016e8e11cb5f..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git app/src/main/res/drawable/p11.jpg app/src/main/res/drawable/p11.jpg
+deleted file mode 100644
+index 8e399df9d860a1d8c9d38125f72d4074e68e9be4..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git app/src/main/res/drawable/p12.jpg app/src/main/res/drawable/p12.jpg
+deleted file mode 100644
+index a4196acacec92448df3335cc2352a1f10cf13550..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git app/src/main/res/drawable/p13.jpg app/src/main/res/drawable/p13.jpg
+deleted file mode 100644
+index a375b3106c8ac7bd9523b64dc4519a92514db159..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git app/src/main/res/drawable/p14.jpg app/src/main/res/drawable/p14.jpg
+deleted file mode 100644
+index 5a7ddce5d860ec7178747b9c68e702662f3edf6f..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git app/src/main/res/drawable/p16.jpg app/src/main/res/drawable/p16.jpg
+deleted file mode 100644
+index e89b7365c006b5738602859318d248cd06036ac6..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git app/src/main/res/drawable/p17.JPG app/src/main/res/drawable/p17.JPG
+deleted file mode 100644
+index 849a9ff0b487dbc57f28bc4fdca8096f00e4ab42..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git app/src/main/res/drawable/p18.JPG app/src/main/res/drawable/p18.JPG
+deleted file mode 100644
+index 3937740f7a30e76211d52b4634c389a11df82498..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git app/src/main/res/drawable/painting20.jpg app/src/main/res/drawable/painting20.jpg
+new file mode 100644
+index 0000000000000000000000000000000000000000..8a82e974e11465bb59c51285fee35f024de6fda4
+GIT binary patch
+literal 9343
+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
+
+diff --git app/src/main/res/drawable/painting13.jpg app/src/main/res/drawable/painting13.jpg
+new file mode 100644
+index 0000000000000000000000000000000000000000..aecd90dc011e9aaef69d2d2b0d8532a8b6c8fc3d
+GIT binary patch
+literal 6815
+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
+
+diff --git app/src/main/res/drawable/painting12.jpg app/src/main/res/drawable/painting12.jpg
+new file mode 100644
+index 0000000000000000000000000000000000000000..0891e749a66c6aba88ded93f657517ab216c8f81
+GIT binary patch
+literal 6480
+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
+
+diff --git app/src/main/res/drawable/painting9.jpg app/src/main/res/drawable/painting9.jpg
+new file mode 100644
+index 0000000000000000000000000000000000000000..edfa83a1307cc26194591665aa157f881ec546f5
+GIT binary patch
+literal 6511
+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
+
